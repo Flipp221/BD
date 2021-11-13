@@ -8,12 +8,16 @@
         Title="Window2" Height="450" Width="750">
     <Grid>
         <Image Source="ef56fb24364f66fef59ccf94225f4b4f.jpg" Margin="-46,0,-48,0"/>
-        <DataGrid x:Name="DGridKatalog" AutoGenerateColumns="False" IsReadOnly="True"> 
+        <DataGrid x:Name="DGridKatalog" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название клавиатуры" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Цвет клавиатуры" Binding="{Binding Color.Name}" Width="150"></DataGridTextColumn>
-                <DataGridTextColumn Header="Производитель" Binding="{Binding proizvoditel.Name}" Width="250"></DataGridTextColumn>
+                <DataGridTextColumn Header="Цвет клавиатуры" Binding="{Binding Color.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Производитель" Binding="{Binding proizvoditel.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Тип подсветки клавиш" Binding="{Binding Key_illumination_color.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Тип клавиатуры" Binding="{Binding keyboard_type.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Гарантия" Binding="{Binding Garantiya.Name}" Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Назад" HorizontalAlignment="Right" Name="Btnback" Click="BtnBack_Click" Height="45" VerticalAlignment="Bottom" RenderTransformOrigin="-0.553,-0.345" Margin="0,0,10,10" Width="95"/>
     </Grid>
 </Window>
