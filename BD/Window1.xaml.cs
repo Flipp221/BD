@@ -23,5 +23,44 @@ namespace BD
         {
             InitializeComponent();
         }
+        private void Image_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        private void Image_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+        private void Keyboard_game(object sender, MouseEventArgs e)
+        {
+            Window2 wd = new Window2();
+            wd.Show();
+            this.Close();
+        }
+        private void mouse_game(object sender, MouseEventArgs e)
+        {
+            Window3 wd = new Window3();
+            wd.Show();
+            this.Close();
+        }
+        private void ushi_game(object sender, MouseEventArgs e)
+        {
+            Window4 wd = new Window4();
+            wd.Show();
+            this.Close();
+        }
+        private void Kreslo_game(object sender, MouseEventArgs e)
+        {
+            Window5 wd = new Window5();
+            wd.Show();
+            this.Close();
+        }
+        private void micro_game(object sender, MouseEventArgs e)
+        {
+            Window6 wd = new Window6();
+            wd.Show();
+            this.Close();
+        }
     }
 }
