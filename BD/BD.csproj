@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +64,78 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="baseModel1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baseModel1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="baseModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="baseModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baseModel1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Color.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Garantiya.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="keyboard.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="keyboard_type.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Key_illumination_color.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kreslo.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kreslo_type.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Microfon.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="microfon_type.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Micro_ushi.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mouse.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mouse_type.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="naushniki.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Naushniki_type.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="number_user.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proizvoditel.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="roll.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>baseModel1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
@@ -128,6 +209,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="baseModel1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>baseModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="baseModel1.edmx.diagram">
+      <DependentUpon>baseModel1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -159,6 +248,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ef56fb24364f66fef59ccf94225f4b4f.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="baseModel1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>baseModel1.Context.cs</LastGenOutput>
+      <DependentUpon>baseModel1.edmx</DependentUpon>
+    </Content>
+    <Content Include="baseModel1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>baseModel1.edmx</DependentUpon>
+      <LastGenOutput>baseModel1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

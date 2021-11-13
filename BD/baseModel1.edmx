@@ -1,0 +1,1321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище katalogModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="id_color" />
+          </Key>
+          <Property Name="id_color" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Garantiya">
+          <Key>
+            <PropertyRef Name="id_garantii" />
+          </Key>
+          <Property Name="id_garantii" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Key_illumination_color">
+          <Key>
+            <PropertyRef Name="id_Key_illumination_color" />
+          </Key>
+          <Property Name="id_Key_illumination_color" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="keyboard">
+          <Key>
+            <PropertyRef Name="id_keyboard" />
+          </Key>
+          <Property Name="id_keyboard" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="id_Key_illumination_color" Type="int" />
+          <Property Name="id_color" Type="int" />
+          <Property Name="id_proizvoditel" Type="int" />
+          <Property Name="id_type_K" Type="int" />
+          <Property Name="id_garantii" Type="int" />
+        </EntityType>
+        <EntityType Name="keyboard_type">
+          <Key>
+            <PropertyRef Name="id_type_K" />
+          </Key>
+          <Property Name="id_type_K" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Kreslo">
+          <Key>
+            <PropertyRef Name="id_kresla" />
+          </Key>
+          <Property Name="id_kresla" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="id_color" Type="int" />
+          <Property Name="id_proizvoditel" Type="int" />
+          <Property Name="id_type_K" Type="int" />
+          <Property Name="id_garantii" Type="int" />
+        </EntityType>
+        <EntityType Name="kreslo_type">
+          <Key>
+            <PropertyRef Name="id_type_K" />
+          </Key>
+          <Property Name="id_type_K" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Micro_ushi">
+          <Key>
+            <PropertyRef Name="id_micro_ushi" />
+          </Key>
+          <Property Name="id_micro_ushi" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Microfon">
+          <Key>
+            <PropertyRef Name="id_microfona" />
+          </Key>
+          <Property Name="id_microfona" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Max_frequency" Type="varchar" MaxLength="50" />
+          <Property Name="Min_frequency" Type="varchar" MaxLength="50" />
+          <Property Name="id_proizvoditel" Type="int" />
+          <Property Name="id_type_Mic" Type="int" />
+          <Property Name="id_garantii" Type="int" />
+        </EntityType>
+        <EntityType Name="microfon_type">
+          <Key>
+            <PropertyRef Name="id_type_Mic" />
+          </Key>
+          <Property Name="id_type_Mic" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Mouse">
+          <Key>
+            <PropertyRef Name="id_mouse" />
+          </Key>
+          <Property Name="id_mouse" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Min_DPI" Type="varchar" MaxLength="50" />
+          <Property Name="Max_DPI" Type="varchar" MaxLength="50" />
+          <Property Name="id_Key_illumination_color" Type="int" />
+          <Property Name="id_proizvoditel" Type="int" />
+          <Property Name="id_type_M" Type="int" />
+          <Property Name="id_garantii" Type="int" />
+        </EntityType>
+        <EntityType Name="Mouse_type">
+          <Key>
+            <PropertyRef Name="id_type_M" />
+          </Key>
+          <Property Name="id_type_M" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="naushniki">
+          <Key>
+            <PropertyRef Name="id_naushnikov" />
+          </Key>
+          <Property Name="id_naushnikov" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Signal_transmission_method" Type="varchar" MaxLength="50" />
+          <Property Name="id_color" Type="int" />
+          <Property Name="id_micro_ushi" Type="int" />
+          <Property Name="id_proizvoditel" Type="int" />
+          <Property Name="id_type_N" Type="int" />
+          <Property Name="id_garantii" Type="int" />
+        </EntityType>
+        <EntityType Name="Naushniki_type">
+          <Key>
+            <PropertyRef Name="id_type_N" />
+          </Key>
+          <Property Name="id_type_N" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="number_user">
+          <Key>
+            <PropertyRef Name="id_number" />
+          </Key>
+          <Property Name="id_number" Type="int" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="id_user" Type="int" />
+        </EntityType>
+        <EntityType Name="proizvoditel">
+          <Key>
+            <PropertyRef Name="id_proizvoditel" />
+          </Key>
+          <Property Name="id_proizvoditel" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="roll">
+          <Key>
+            <PropertyRef Name="id_roll" />
+          </Key>
+          <Property Name="id_roll" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id_user" />
+          </Key>
+          <Property Name="Id_user" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="int" />
+          <Property Name="adress" Type="varchar" MaxLength="50" />
+          <Property Name="age" Type="int" />
+          <Property Name="id_roll" Type="int" />
+        </EntityType>
+        <Association Name="FK_keyboard_Color">
+          <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
+          <End Role="keyboard" Type="Self.keyboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="id_color" />
+            </Principal>
+            <Dependent Role="keyboard">
+              <PropertyRef Name="id_color" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_keyboard_Garantiya">
+          <End Role="Garantiya" Type="Self.Garantiya" Multiplicity="0..1" />
+          <End Role="keyboard" Type="Self.keyboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Garantiya">
+              <PropertyRef Name="id_garantii" />
+            </Principal>
+            <Dependent Role="keyboard">
+              <PropertyRef Name="id_garantii" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_keyboard_Key_illumination_color">
+          <End Role="Key_illumination_color" Type="Self.Key_illumination_color" Multiplicity="0..1" />
+          <End Role="keyboard" Type="Self.keyboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Key_illumination_color">
+              <PropertyRef Name="id_Key_illumination_color" />
+            </Principal>
+            <Dependent Role="keyboard">
+              <PropertyRef Name="id_Key_illumination_color" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_keyboard_keyboard_type">
+          <End Role="keyboard_type" Type="Self.keyboard_type" Multiplicity="0..1" />
+          <End Role="keyboard" Type="Self.keyboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="keyboard_type">
+              <PropertyRef Name="id_type_K" />
+            </Principal>
+            <Dependent Role="keyboard">
+              <PropertyRef Name="id_type_K" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_keyboard_proizvoditel">
+          <End Role="proizvoditel" Type="Self.proizvoditel" Multiplicity="0..1" />
+          <End Role="keyboard" Type="Self.keyboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proizvoditel">
+              <PropertyRef Name="id_proizvoditel" />
+            </Principal>
+            <Dependent Role="keyboard">
+              <PropertyRef Name="id_proizvoditel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kreslo_Color">
+          <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
+          <End Role="Kreslo" Type="Self.Kreslo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="id_color" />
+            </Principal>
+            <Dependent Role="Kreslo">
+              <PropertyRef Name="id_color" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kreslo_Garantiya">
+          <End Role="Garantiya" Type="Self.Garantiya" Multiplicity="0..1" />
+          <End Role="Kreslo" Type="Self.Kreslo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Garantiya">
+              <PropertyRef Name="id_garantii" />
+            </Principal>
+            <Dependent Role="Kreslo">
+              <PropertyRef Name="id_garantii" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kreslo_kreslo_type">
+          <End Role="kreslo_type" Type="Self.kreslo_type" Multiplicity="0..1" />
+          <End Role="Kreslo" Type="Self.Kreslo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kreslo_type">
+              <PropertyRef Name="id_type_K" />
+            </Principal>
+            <Dependent Role="Kreslo">
+              <PropertyRef Name="id_type_K" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kreslo_proizvoditel">
+          <End Role="proizvoditel" Type="Self.proizvoditel" Multiplicity="0..1" />
+          <End Role="Kreslo" Type="Self.Kreslo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proizvoditel">
+              <PropertyRef Name="id_proizvoditel" />
+            </Principal>
+            <Dependent Role="Kreslo">
+              <PropertyRef Name="id_proizvoditel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Microfon_Garantiya1">
+          <End Role="Garantiya" Type="Self.Garantiya" Multiplicity="0..1" />
+          <End Role="Microfon" Type="Self.Microfon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Garantiya">
+              <PropertyRef Name="id_garantii" />
+            </Principal>
+            <Dependent Role="Microfon">
+              <PropertyRef Name="id_garantii" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Microfon_microfon_type">
+          <End Role="microfon_type" Type="Self.microfon_type" Multiplicity="0..1" />
+          <End Role="Microfon" Type="Self.Microfon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="microfon_type">
+              <PropertyRef Name="id_type_Mic" />
+            </Principal>
+            <Dependent Role="Microfon">
+              <PropertyRef Name="id_type_Mic" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Microfon_proizvoditel">
+          <End Role="proizvoditel" Type="Self.proizvoditel" Multiplicity="0..1" />
+          <End Role="Microfon" Type="Self.Microfon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proizvoditel">
+              <PropertyRef Name="id_proizvoditel" />
+            </Principal>
+            <Dependent Role="Microfon">
+              <PropertyRef Name="id_proizvoditel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mouse_Garantiya">
+          <End Role="Garantiya" Type="Self.Garantiya" Multiplicity="0..1" />
+          <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Garantiya">
+              <PropertyRef Name="id_garantii" />
+            </Principal>
+            <Dependent Role="Mouse">
+              <PropertyRef Name="id_garantii" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mouse_Key_illumination_color">
+          <End Role="Key_illumination_color" Type="Self.Key_illumination_color" Multiplicity="0..1" />
+          <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Key_illumination_color">
+              <PropertyRef Name="id_Key_illumination_color" />
+            </Principal>
+            <Dependent Role="Mouse">
+              <PropertyRef Name="id_Key_illumination_color" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mouse_Mouse_type">
+          <End Role="Mouse_type" Type="Self.Mouse_type" Multiplicity="0..1" />
+          <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mouse_type">
+              <PropertyRef Name="id_type_M" />
+            </Principal>
+            <Dependent Role="Mouse">
+              <PropertyRef Name="id_type_M" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mouse_proizvoditel">
+          <End Role="proizvoditel" Type="Self.proizvoditel" Multiplicity="0..1" />
+          <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proizvoditel">
+              <PropertyRef Name="id_proizvoditel" />
+            </Principal>
+            <Dependent Role="Mouse">
+              <PropertyRef Name="id_proizvoditel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_naushniki_Micro_ushi">
+          <End Role="Micro_ushi" Type="Self.Micro_ushi" Multiplicity="0..1" />
+          <End Role="naushniki" Type="Self.naushniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Micro_ushi">
+              <PropertyRef Name="id_micro_ushi" />
+            </Principal>
+            <Dependent Role="naushniki">
+              <PropertyRef Name="id_micro_ushi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_naushniki_Naushniki_type">
+          <End Role="Naushniki_type" Type="Self.Naushniki_type" Multiplicity="0..1" />
+          <End Role="naushniki" Type="Self.naushniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Naushniki_type">
+              <PropertyRef Name="id_type_N" />
+            </Principal>
+            <Dependent Role="naushniki">
+              <PropertyRef Name="id_type_N" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_naushniki_proizvoditel">
+          <End Role="proizvoditel" Type="Self.proizvoditel" Multiplicity="0..1" />
+          <End Role="naushniki" Type="Self.naushniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proizvoditel">
+              <PropertyRef Name="id_proizvoditel" />
+            </Principal>
+            <Dependent Role="naushniki">
+              <PropertyRef Name="id_proizvoditel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_number_user_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="number_user" Type="Self.number_user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id_user" />
+            </Principal>
+            <Dependent Role="number_user">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_roll">
+          <End Role="roll" Type="Self.roll" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roll">
+              <PropertyRef Name="id_roll" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="id_roll" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище katalogModelContainer">
+          <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Garantiya" EntityType="Self.Garantiya" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Key_illumination_color" EntityType="Self.Key_illumination_color" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="keyboard" EntityType="Self.keyboard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="keyboard_type" EntityType="Self.keyboard_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kreslo" EntityType="Self.Kreslo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kreslo_type" EntityType="Self.kreslo_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Micro_ushi" EntityType="Self.Micro_ushi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Microfon" EntityType="Self.Microfon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="microfon_type" EntityType="Self.microfon_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mouse" EntityType="Self.Mouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mouse_type" EntityType="Self.Mouse_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="naushniki" EntityType="Self.naushniki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Naushniki_type" EntityType="Self.Naushniki_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="number_user" EntityType="Self.number_user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="proizvoditel" EntityType="Self.proizvoditel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="roll" EntityType="Self.roll" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_keyboard_Color" Association="Self.FK_keyboard_Color">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="keyboard" EntitySet="keyboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_keyboard_Garantiya" Association="Self.FK_keyboard_Garantiya">
+            <End Role="Garantiya" EntitySet="Garantiya" />
+            <End Role="keyboard" EntitySet="keyboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_keyboard_Key_illumination_color" Association="Self.FK_keyboard_Key_illumination_color">
+            <End Role="Key_illumination_color" EntitySet="Key_illumination_color" />
+            <End Role="keyboard" EntitySet="keyboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_keyboard_keyboard_type" Association="Self.FK_keyboard_keyboard_type">
+            <End Role="keyboard_type" EntitySet="keyboard_type" />
+            <End Role="keyboard" EntitySet="keyboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_keyboard_proizvoditel" Association="Self.FK_keyboard_proizvoditel">
+            <End Role="proizvoditel" EntitySet="proizvoditel" />
+            <End Role="keyboard" EntitySet="keyboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kreslo_Color" Association="Self.FK_Kreslo_Color">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="Kreslo" EntitySet="Kreslo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kreslo_Garantiya" Association="Self.FK_Kreslo_Garantiya">
+            <End Role="Garantiya" EntitySet="Garantiya" />
+            <End Role="Kreslo" EntitySet="Kreslo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kreslo_kreslo_type" Association="Self.FK_Kreslo_kreslo_type">
+            <End Role="kreslo_type" EntitySet="kreslo_type" />
+            <End Role="Kreslo" EntitySet="Kreslo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kreslo_proizvoditel" Association="Self.FK_Kreslo_proizvoditel">
+            <End Role="proizvoditel" EntitySet="proizvoditel" />
+            <End Role="Kreslo" EntitySet="Kreslo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Microfon_Garantiya1" Association="Self.FK_Microfon_Garantiya1">
+            <End Role="Garantiya" EntitySet="Garantiya" />
+            <End Role="Microfon" EntitySet="Microfon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Microfon_microfon_type" Association="Self.FK_Microfon_microfon_type">
+            <End Role="microfon_type" EntitySet="microfon_type" />
+            <End Role="Microfon" EntitySet="Microfon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Microfon_proizvoditel" Association="Self.FK_Microfon_proizvoditel">
+            <End Role="proizvoditel" EntitySet="proizvoditel" />
+            <End Role="Microfon" EntitySet="Microfon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mouse_Garantiya" Association="Self.FK_Mouse_Garantiya">
+            <End Role="Garantiya" EntitySet="Garantiya" />
+            <End Role="Mouse" EntitySet="Mouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mouse_Key_illumination_color" Association="Self.FK_Mouse_Key_illumination_color">
+            <End Role="Key_illumination_color" EntitySet="Key_illumination_color" />
+            <End Role="Mouse" EntitySet="Mouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mouse_Mouse_type" Association="Self.FK_Mouse_Mouse_type">
+            <End Role="Mouse_type" EntitySet="Mouse_type" />
+            <End Role="Mouse" EntitySet="Mouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mouse_proizvoditel" Association="Self.FK_Mouse_proizvoditel">
+            <End Role="proizvoditel" EntitySet="proizvoditel" />
+            <End Role="Mouse" EntitySet="Mouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_naushniki_Micro_ushi" Association="Self.FK_naushniki_Micro_ushi">
+            <End Role="Micro_ushi" EntitySet="Micro_ushi" />
+            <End Role="naushniki" EntitySet="naushniki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_naushniki_Naushniki_type" Association="Self.FK_naushniki_Naushniki_type">
+            <End Role="Naushniki_type" EntitySet="Naushniki_type" />
+            <End Role="naushniki" EntitySet="naushniki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_naushniki_proizvoditel" Association="Self.FK_naushniki_proizvoditel">
+            <End Role="proizvoditel" EntitySet="proizvoditel" />
+            <End Role="naushniki" EntitySet="naushniki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_number_user_User" Association="Self.FK_number_user_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="number_user" EntitySet="number_user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_roll" Association="Self.FK_User_roll">
+            <End Role="roll" EntitySet="roll" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="katalogModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="id_color" />
+          </Key>
+          <Property Name="id_color" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="keyboard" Relationship="Self.FK_keyboard_Color" FromRole="Color" ToRole="keyboard" />
+          <NavigationProperty Name="Kreslo" Relationship="Self.FK_Kreslo_Color" FromRole="Color" ToRole="Kreslo" />
+        </EntityType>
+        <EntityType Name="Garantiya">
+          <Key>
+            <PropertyRef Name="id_garantii" />
+          </Key>
+          <Property Name="id_garantii" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="keyboard" Relationship="Self.FK_keyboard_Garantiya" FromRole="Garantiya" ToRole="keyboard" />
+          <NavigationProperty Name="Kreslo" Relationship="Self.FK_Kreslo_Garantiya" FromRole="Garantiya" ToRole="Kreslo" />
+          <NavigationProperty Name="Microfon" Relationship="Self.FK_Microfon_Garantiya1" FromRole="Garantiya" ToRole="Microfon" />
+          <NavigationProperty Name="Mouse" Relationship="Self.FK_Mouse_Garantiya" FromRole="Garantiya" ToRole="Mouse" />
+        </EntityType>
+        <EntityType Name="Key_illumination_color">
+          <Key>
+            <PropertyRef Name="id_Key_illumination_color" />
+          </Key>
+          <Property Name="id_Key_illumination_color" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="keyboard" Relationship="Self.FK_keyboard_Key_illumination_color" FromRole="Key_illumination_color" ToRole="keyboard" />
+          <NavigationProperty Name="Mouse" Relationship="Self.FK_Mouse_Key_illumination_color" FromRole="Key_illumination_color" ToRole="Mouse" />
+        </EntityType>
+        <EntityType Name="keyboard">
+          <Key>
+            <PropertyRef Name="id_keyboard" />
+          </Key>
+          <Property Name="id_keyboard" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_Key_illumination_color" Type="Int32" />
+          <Property Name="id_color" Type="Int32" />
+          <Property Name="id_proizvoditel" Type="Int32" />
+          <Property Name="id_type_K" Type="Int32" />
+          <Property Name="id_garantii" Type="Int32" />
+          <NavigationProperty Name="Color" Relationship="Self.FK_keyboard_Color" FromRole="keyboard" ToRole="Color" />
+          <NavigationProperty Name="Garantiya" Relationship="Self.FK_keyboard_Garantiya" FromRole="keyboard" ToRole="Garantiya" />
+          <NavigationProperty Name="Key_illumination_color" Relationship="Self.FK_keyboard_Key_illumination_color" FromRole="keyboard" ToRole="Key_illumination_color" />
+          <NavigationProperty Name="keyboard_type" Relationship="Self.FK_keyboard_keyboard_type" FromRole="keyboard" ToRole="keyboard_type" />
+          <NavigationProperty Name="proizvoditel" Relationship="Self.FK_keyboard_proizvoditel" FromRole="keyboard" ToRole="proizvoditel" />
+        </EntityType>
+        <EntityType Name="keyboard_type">
+          <Key>
+            <PropertyRef Name="id_type_K" />
+          </Key>
+          <Property Name="id_type_K" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="keyboard" Relationship="Self.FK_keyboard_keyboard_type" FromRole="keyboard_type" ToRole="keyboard" />
+        </EntityType>
+        <EntityType Name="Kreslo">
+          <Key>
+            <PropertyRef Name="id_kresla" />
+          </Key>
+          <Property Name="id_kresla" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_color" Type="Int32" />
+          <Property Name="id_proizvoditel" Type="Int32" />
+          <Property Name="id_type_K" Type="Int32" />
+          <Property Name="id_garantii" Type="Int32" />
+          <NavigationProperty Name="Color" Relationship="Self.FK_Kreslo_Color" FromRole="Kreslo" ToRole="Color" />
+          <NavigationProperty Name="Garantiya" Relationship="Self.FK_Kreslo_Garantiya" FromRole="Kreslo" ToRole="Garantiya" />
+          <NavigationProperty Name="kreslo_type" Relationship="Self.FK_Kreslo_kreslo_type" FromRole="Kreslo" ToRole="kreslo_type" />
+          <NavigationProperty Name="proizvoditel" Relationship="Self.FK_Kreslo_proizvoditel" FromRole="Kreslo" ToRole="proizvoditel" />
+        </EntityType>
+        <EntityType Name="kreslo_type">
+          <Key>
+            <PropertyRef Name="id_type_K" />
+          </Key>
+          <Property Name="id_type_K" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kreslo" Relationship="Self.FK_Kreslo_kreslo_type" FromRole="kreslo_type" ToRole="Kreslo" />
+        </EntityType>
+        <EntityType Name="Micro_ushi">
+          <Key>
+            <PropertyRef Name="id_micro_ushi" />
+          </Key>
+          <Property Name="id_micro_ushi" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="naushniki" Relationship="Self.FK_naushniki_Micro_ushi" FromRole="Micro_ushi" ToRole="naushniki" />
+        </EntityType>
+        <EntityType Name="Microfon">
+          <Key>
+            <PropertyRef Name="id_microfona" />
+          </Key>
+          <Property Name="id_microfona" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Max_frequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Min_frequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_proizvoditel" Type="Int32" />
+          <Property Name="id_type_Mic" Type="Int32" />
+          <Property Name="id_garantii" Type="Int32" />
+          <NavigationProperty Name="Garantiya" Relationship="Self.FK_Microfon_Garantiya1" FromRole="Microfon" ToRole="Garantiya" />
+          <NavigationProperty Name="microfon_type" Relationship="Self.FK_Microfon_microfon_type" FromRole="Microfon" ToRole="microfon_type" />
+          <NavigationProperty Name="proizvoditel" Relationship="Self.FK_Microfon_proizvoditel" FromRole="Microfon" ToRole="proizvoditel" />
+        </EntityType>
+        <EntityType Name="microfon_type">
+          <Key>
+            <PropertyRef Name="id_type_Mic" />
+          </Key>
+          <Property Name="id_type_Mic" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Microfon" Relationship="Self.FK_Microfon_microfon_type" FromRole="microfon_type" ToRole="Microfon" />
+        </EntityType>
+        <EntityType Name="Mouse">
+          <Key>
+            <PropertyRef Name="id_mouse" />
+          </Key>
+          <Property Name="id_mouse" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Min_DPI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Max_DPI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_Key_illumination_color" Type="Int32" />
+          <Property Name="id_proizvoditel" Type="Int32" />
+          <Property Name="id_type_M" Type="Int32" />
+          <Property Name="id_garantii" Type="Int32" />
+          <NavigationProperty Name="Garantiya" Relationship="Self.FK_Mouse_Garantiya" FromRole="Mouse" ToRole="Garantiya" />
+          <NavigationProperty Name="Key_illumination_color" Relationship="Self.FK_Mouse_Key_illumination_color" FromRole="Mouse" ToRole="Key_illumination_color" />
+          <NavigationProperty Name="Mouse_type" Relationship="Self.FK_Mouse_Mouse_type" FromRole="Mouse" ToRole="Mouse_type" />
+          <NavigationProperty Name="proizvoditel" Relationship="Self.FK_Mouse_proizvoditel" FromRole="Mouse" ToRole="proizvoditel" />
+        </EntityType>
+        <EntityType Name="Mouse_type">
+          <Key>
+            <PropertyRef Name="id_type_M" />
+          </Key>
+          <Property Name="id_type_M" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Mouse" Relationship="Self.FK_Mouse_Mouse_type" FromRole="Mouse_type" ToRole="Mouse" />
+        </EntityType>
+        <EntityType Name="naushniki">
+          <Key>
+            <PropertyRef Name="id_naushnikov" />
+          </Key>
+          <Property Name="id_naushnikov" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Signal_transmission_method" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_color" Type="Int32" />
+          <Property Name="id_micro_ushi" Type="Int32" />
+          <Property Name="id_proizvoditel" Type="Int32" />
+          <Property Name="id_type_N" Type="Int32" />
+          <Property Name="id_garantii" Type="Int32" />
+          <NavigationProperty Name="Micro_ushi" Relationship="Self.FK_naushniki_Micro_ushi" FromRole="naushniki" ToRole="Micro_ushi" />
+          <NavigationProperty Name="Naushniki_type" Relationship="Self.FK_naushniki_Naushniki_type" FromRole="naushniki" ToRole="Naushniki_type" />
+          <NavigationProperty Name="proizvoditel" Relationship="Self.FK_naushniki_proizvoditel" FromRole="naushniki" ToRole="proizvoditel" />
+        </EntityType>
+        <EntityType Name="Naushniki_type">
+          <Key>
+            <PropertyRef Name="id_type_N" />
+          </Key>
+          <Property Name="id_type_N" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="naushniki" Relationship="Self.FK_naushniki_Naushniki_type" FromRole="Naushniki_type" ToRole="naushniki" />
+        </EntityType>
+        <EntityType Name="number_user">
+          <Key>
+            <PropertyRef Name="id_number" />
+          </Key>
+          <Property Name="id_number" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_user" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK_number_user_User" FromRole="number_user" ToRole="User" />
+        </EntityType>
+        <EntityType Name="proizvoditel">
+          <Key>
+            <PropertyRef Name="id_proizvoditel" />
+          </Key>
+          <Property Name="id_proizvoditel" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="keyboard" Relationship="Self.FK_keyboard_proizvoditel" FromRole="proizvoditel" ToRole="keyboard" />
+          <NavigationProperty Name="Kreslo" Relationship="Self.FK_Kreslo_proizvoditel" FromRole="proizvoditel" ToRole="Kreslo" />
+          <NavigationProperty Name="Microfon" Relationship="Self.FK_Microfon_proizvoditel" FromRole="proizvoditel" ToRole="Microfon" />
+          <NavigationProperty Name="Mouse" Relationship="Self.FK_Mouse_proizvoditel" FromRole="proizvoditel" ToRole="Mouse" />
+          <NavigationProperty Name="naushniki" Relationship="Self.FK_naushniki_proizvoditel" FromRole="proizvoditel" ToRole="naushniki" />
+        </EntityType>
+        <EntityType Name="roll">
+          <Key>
+            <PropertyRef Name="id_roll" />
+          </Key>
+          <Property Name="id_roll" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_roll" FromRole="roll" ToRole="User" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id_user" />
+          </Key>
+          <Property Name="Id_user" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="Int32" />
+          <Property Name="adress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="id_roll" Type="Int32" />
+          <NavigationProperty Name="number_user" Relationship="Self.FK_number_user_User" FromRole="User" ToRole="number_user" />
+          <NavigationProperty Name="roll" Relationship="Self.FK_User_roll" FromRole="User" ToRole="roll" />
+        </EntityType>
+        <Association Name="FK_keyboard_Color">
+          <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
+          <End Role="keyboard" Type="Self.keyboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="id_color" />
+            </Principal>
+            <Dependent Role="keyboard">
+              <PropertyRef Name="id_color" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kreslo_Color">
+          <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
+          <End Role="Kreslo" Type="Self.Kreslo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="id_color" />
+            </Principal>
+            <Dependent Role="Kreslo">
+              <PropertyRef Name="id_color" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_keyboard_Garantiya">
+          <End Role="Garantiya" Type="Self.Garantiya" Multiplicity="0..1" />
+          <End Role="keyboard" Type="Self.keyboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Garantiya">
+              <PropertyRef Name="id_garantii" />
+            </Principal>
+            <Dependent Role="keyboard">
+              <PropertyRef Name="id_garantii" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kreslo_Garantiya">
+          <End Role="Garantiya" Type="Self.Garantiya" Multiplicity="0..1" />
+          <End Role="Kreslo" Type="Self.Kreslo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Garantiya">
+              <PropertyRef Name="id_garantii" />
+            </Principal>
+            <Dependent Role="Kreslo">
+              <PropertyRef Name="id_garantii" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Microfon_Garantiya1">
+          <End Role="Garantiya" Type="Self.Garantiya" Multiplicity="0..1" />
+          <End Role="Microfon" Type="Self.Microfon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Garantiya">
+              <PropertyRef Name="id_garantii" />
+            </Principal>
+            <Dependent Role="Microfon">
+              <PropertyRef Name="id_garantii" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mouse_Garantiya">
+          <End Role="Garantiya" Type="Self.Garantiya" Multiplicity="0..1" />
+          <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Garantiya">
+              <PropertyRef Name="id_garantii" />
+            </Principal>
+            <Dependent Role="Mouse">
+              <PropertyRef Name="id_garantii" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_keyboard_Key_illumination_color">
+          <End Role="Key_illumination_color" Type="Self.Key_illumination_color" Multiplicity="0..1" />
+          <End Role="keyboard" Type="Self.keyboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Key_illumination_color">
+              <PropertyRef Name="id_Key_illumination_color" />
+            </Principal>
+            <Dependent Role="keyboard">
+              <PropertyRef Name="id_Key_illumination_color" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mouse_Key_illumination_color">
+          <End Role="Key_illumination_color" Type="Self.Key_illumination_color" Multiplicity="0..1" />
+          <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Key_illumination_color">
+              <PropertyRef Name="id_Key_illumination_color" />
+            </Principal>
+            <Dependent Role="Mouse">
+              <PropertyRef Name="id_Key_illumination_color" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_keyboard_keyboard_type">
+          <End Role="keyboard_type" Type="Self.keyboard_type" Multiplicity="0..1" />
+          <End Role="keyboard" Type="Self.keyboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="keyboard_type">
+              <PropertyRef Name="id_type_K" />
+            </Principal>
+            <Dependent Role="keyboard">
+              <PropertyRef Name="id_type_K" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_keyboard_proizvoditel">
+          <End Role="proizvoditel" Type="Self.proizvoditel" Multiplicity="0..1" />
+          <End Role="keyboard" Type="Self.keyboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proizvoditel">
+              <PropertyRef Name="id_proizvoditel" />
+            </Principal>
+            <Dependent Role="keyboard">
+              <PropertyRef Name="id_proizvoditel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kreslo_kreslo_type">
+          <End Role="kreslo_type" Type="Self.kreslo_type" Multiplicity="0..1" />
+          <End Role="Kreslo" Type="Self.Kreslo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kreslo_type">
+              <PropertyRef Name="id_type_K" />
+            </Principal>
+            <Dependent Role="Kreslo">
+              <PropertyRef Name="id_type_K" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kreslo_proizvoditel">
+          <End Role="proizvoditel" Type="Self.proizvoditel" Multiplicity="0..1" />
+          <End Role="Kreslo" Type="Self.Kreslo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proizvoditel">
+              <PropertyRef Name="id_proizvoditel" />
+            </Principal>
+            <Dependent Role="Kreslo">
+              <PropertyRef Name="id_proizvoditel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_naushniki_Micro_ushi">
+          <End Role="Micro_ushi" Type="Self.Micro_ushi" Multiplicity="0..1" />
+          <End Role="naushniki" Type="Self.naushniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Micro_ushi">
+              <PropertyRef Name="id_micro_ushi" />
+            </Principal>
+            <Dependent Role="naushniki">
+              <PropertyRef Name="id_micro_ushi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Microfon_microfon_type">
+          <End Role="microfon_type" Type="Self.microfon_type" Multiplicity="0..1" />
+          <End Role="Microfon" Type="Self.Microfon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="microfon_type">
+              <PropertyRef Name="id_type_Mic" />
+            </Principal>
+            <Dependent Role="Microfon">
+              <PropertyRef Name="id_type_Mic" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Microfon_proizvoditel">
+          <End Role="proizvoditel" Type="Self.proizvoditel" Multiplicity="0..1" />
+          <End Role="Microfon" Type="Self.Microfon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proizvoditel">
+              <PropertyRef Name="id_proizvoditel" />
+            </Principal>
+            <Dependent Role="Microfon">
+              <PropertyRef Name="id_proizvoditel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mouse_Mouse_type">
+          <End Role="Mouse_type" Type="Self.Mouse_type" Multiplicity="0..1" />
+          <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mouse_type">
+              <PropertyRef Name="id_type_M" />
+            </Principal>
+            <Dependent Role="Mouse">
+              <PropertyRef Name="id_type_M" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mouse_proizvoditel">
+          <End Role="proizvoditel" Type="Self.proizvoditel" Multiplicity="0..1" />
+          <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proizvoditel">
+              <PropertyRef Name="id_proizvoditel" />
+            </Principal>
+            <Dependent Role="Mouse">
+              <PropertyRef Name="id_proizvoditel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_naushniki_Naushniki_type">
+          <End Role="Naushniki_type" Type="Self.Naushniki_type" Multiplicity="0..1" />
+          <End Role="naushniki" Type="Self.naushniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Naushniki_type">
+              <PropertyRef Name="id_type_N" />
+            </Principal>
+            <Dependent Role="naushniki">
+              <PropertyRef Name="id_type_N" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_naushniki_proizvoditel">
+          <End Role="proizvoditel" Type="Self.proizvoditel" Multiplicity="0..1" />
+          <End Role="naushniki" Type="Self.naushniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proizvoditel">
+              <PropertyRef Name="id_proizvoditel" />
+            </Principal>
+            <Dependent Role="naushniki">
+              <PropertyRef Name="id_proizvoditel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_number_user_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="number_user" Type="Self.number_user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id_user" />
+            </Principal>
+            <Dependent Role="number_user">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_roll">
+          <End Role="roll" Type="Self.roll" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roll">
+              <PropertyRef Name="id_roll" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="id_roll" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="katalogEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Color" EntityType="Self.Color" />
+          <EntitySet Name="Garantiya" EntityType="Self.Garantiya" />
+          <EntitySet Name="Key_illumination_color" EntityType="Self.Key_illumination_color" />
+          <EntitySet Name="keyboard" EntityType="Self.keyboard" />
+          <EntitySet Name="keyboard_type" EntityType="Self.keyboard_type" />
+          <EntitySet Name="Kreslo" EntityType="Self.Kreslo" />
+          <EntitySet Name="kreslo_type" EntityType="Self.kreslo_type" />
+          <EntitySet Name="Micro_ushi" EntityType="Self.Micro_ushi" />
+          <EntitySet Name="Microfon" EntityType="Self.Microfon" />
+          <EntitySet Name="microfon_type" EntityType="Self.microfon_type" />
+          <EntitySet Name="Mouse" EntityType="Self.Mouse" />
+          <EntitySet Name="Mouse_type" EntityType="Self.Mouse_type" />
+          <EntitySet Name="naushniki" EntityType="Self.naushniki" />
+          <EntitySet Name="Naushniki_type" EntityType="Self.Naushniki_type" />
+          <EntitySet Name="number_user" EntityType="Self.number_user" />
+          <EntitySet Name="proizvoditel" EntityType="Self.proizvoditel" />
+          <EntitySet Name="roll" EntityType="Self.roll" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <AssociationSet Name="FK_keyboard_Color" Association="Self.FK_keyboard_Color">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="keyboard" EntitySet="keyboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kreslo_Color" Association="Self.FK_Kreslo_Color">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="Kreslo" EntitySet="Kreslo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_keyboard_Garantiya" Association="Self.FK_keyboard_Garantiya">
+            <End Role="Garantiya" EntitySet="Garantiya" />
+            <End Role="keyboard" EntitySet="keyboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kreslo_Garantiya" Association="Self.FK_Kreslo_Garantiya">
+            <End Role="Garantiya" EntitySet="Garantiya" />
+            <End Role="Kreslo" EntitySet="Kreslo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Microfon_Garantiya1" Association="Self.FK_Microfon_Garantiya1">
+            <End Role="Garantiya" EntitySet="Garantiya" />
+            <End Role="Microfon" EntitySet="Microfon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mouse_Garantiya" Association="Self.FK_Mouse_Garantiya">
+            <End Role="Garantiya" EntitySet="Garantiya" />
+            <End Role="Mouse" EntitySet="Mouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_keyboard_Key_illumination_color" Association="Self.FK_keyboard_Key_illumination_color">
+            <End Role="Key_illumination_color" EntitySet="Key_illumination_color" />
+            <End Role="keyboard" EntitySet="keyboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mouse_Key_illumination_color" Association="Self.FK_Mouse_Key_illumination_color">
+            <End Role="Key_illumination_color" EntitySet="Key_illumination_color" />
+            <End Role="Mouse" EntitySet="Mouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_keyboard_keyboard_type" Association="Self.FK_keyboard_keyboard_type">
+            <End Role="keyboard_type" EntitySet="keyboard_type" />
+            <End Role="keyboard" EntitySet="keyboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_keyboard_proizvoditel" Association="Self.FK_keyboard_proizvoditel">
+            <End Role="proizvoditel" EntitySet="proizvoditel" />
+            <End Role="keyboard" EntitySet="keyboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kreslo_kreslo_type" Association="Self.FK_Kreslo_kreslo_type">
+            <End Role="kreslo_type" EntitySet="kreslo_type" />
+            <End Role="Kreslo" EntitySet="Kreslo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kreslo_proizvoditel" Association="Self.FK_Kreslo_proizvoditel">
+            <End Role="proizvoditel" EntitySet="proizvoditel" />
+            <End Role="Kreslo" EntitySet="Kreslo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_naushniki_Micro_ushi" Association="Self.FK_naushniki_Micro_ushi">
+            <End Role="Micro_ushi" EntitySet="Micro_ushi" />
+            <End Role="naushniki" EntitySet="naushniki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Microfon_microfon_type" Association="Self.FK_Microfon_microfon_type">
+            <End Role="microfon_type" EntitySet="microfon_type" />
+            <End Role="Microfon" EntitySet="Microfon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Microfon_proizvoditel" Association="Self.FK_Microfon_proizvoditel">
+            <End Role="proizvoditel" EntitySet="proizvoditel" />
+            <End Role="Microfon" EntitySet="Microfon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mouse_Mouse_type" Association="Self.FK_Mouse_Mouse_type">
+            <End Role="Mouse_type" EntitySet="Mouse_type" />
+            <End Role="Mouse" EntitySet="Mouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mouse_proizvoditel" Association="Self.FK_Mouse_proizvoditel">
+            <End Role="proizvoditel" EntitySet="proizvoditel" />
+            <End Role="Mouse" EntitySet="Mouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_naushniki_Naushniki_type" Association="Self.FK_naushniki_Naushniki_type">
+            <End Role="Naushniki_type" EntitySet="Naushniki_type" />
+            <End Role="naushniki" EntitySet="naushniki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_naushniki_proizvoditel" Association="Self.FK_naushniki_proizvoditel">
+            <End Role="proizvoditel" EntitySet="proizvoditel" />
+            <End Role="naushniki" EntitySet="naushniki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_number_user_User" Association="Self.FK_number_user_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="number_user" EntitySet="number_user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_roll" Association="Self.FK_User_roll">
+            <End Role="roll" EntitySet="roll" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище katalogModelContainer" CdmEntityContainer="katalogEntities">
+          <EntitySetMapping Name="Color">
+            <EntityTypeMapping TypeName="katalogModel.Color">
+              <MappingFragment StoreEntitySet="Color">
+                <ScalarProperty Name="id_color" ColumnName="id_color" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Garantiya">
+            <EntityTypeMapping TypeName="katalogModel.Garantiya">
+              <MappingFragment StoreEntitySet="Garantiya">
+                <ScalarProperty Name="id_garantii" ColumnName="id_garantii" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Key_illumination_color">
+            <EntityTypeMapping TypeName="katalogModel.Key_illumination_color">
+              <MappingFragment StoreEntitySet="Key_illumination_color">
+                <ScalarProperty Name="id_Key_illumination_color" ColumnName="id_Key_illumination_color" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="keyboard">
+            <EntityTypeMapping TypeName="katalogModel.keyboard">
+              <MappingFragment StoreEntitySet="keyboard">
+                <ScalarProperty Name="id_keyboard" ColumnName="id_keyboard" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id_Key_illumination_color" ColumnName="id_Key_illumination_color" />
+                <ScalarProperty Name="id_color" ColumnName="id_color" />
+                <ScalarProperty Name="id_proizvoditel" ColumnName="id_proizvoditel" />
+                <ScalarProperty Name="id_type_K" ColumnName="id_type_K" />
+                <ScalarProperty Name="id_garantii" ColumnName="id_garantii" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="keyboard_type">
+            <EntityTypeMapping TypeName="katalogModel.keyboard_type">
+              <MappingFragment StoreEntitySet="keyboard_type">
+                <ScalarProperty Name="id_type_K" ColumnName="id_type_K" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kreslo">
+            <EntityTypeMapping TypeName="katalogModel.Kreslo">
+              <MappingFragment StoreEntitySet="Kreslo">
+                <ScalarProperty Name="id_kresla" ColumnName="id_kresla" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id_color" ColumnName="id_color" />
+                <ScalarProperty Name="id_proizvoditel" ColumnName="id_proizvoditel" />
+                <ScalarProperty Name="id_type_K" ColumnName="id_type_K" />
+                <ScalarProperty Name="id_garantii" ColumnName="id_garantii" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kreslo_type">
+            <EntityTypeMapping TypeName="katalogModel.kreslo_type">
+              <MappingFragment StoreEntitySet="kreslo_type">
+                <ScalarProperty Name="id_type_K" ColumnName="id_type_K" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Micro_ushi">
+            <EntityTypeMapping TypeName="katalogModel.Micro_ushi">
+              <MappingFragment StoreEntitySet="Micro_ushi">
+                <ScalarProperty Name="id_micro_ushi" ColumnName="id_micro_ushi" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Microfon">
+            <EntityTypeMapping TypeName="katalogModel.Microfon">
+              <MappingFragment StoreEntitySet="Microfon">
+                <ScalarProperty Name="id_microfona" ColumnName="id_microfona" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Max_frequency" ColumnName="Max_frequency" />
+                <ScalarProperty Name="Min_frequency" ColumnName="Min_frequency" />
+                <ScalarProperty Name="id_proizvoditel" ColumnName="id_proizvoditel" />
+                <ScalarProperty Name="id_type_Mic" ColumnName="id_type_Mic" />
+                <ScalarProperty Name="id_garantii" ColumnName="id_garantii" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="microfon_type">
+            <EntityTypeMapping TypeName="katalogModel.microfon_type">
+              <MappingFragment StoreEntitySet="microfon_type">
+                <ScalarProperty Name="id_type_Mic" ColumnName="id_type_Mic" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mouse">
+            <EntityTypeMapping TypeName="katalogModel.Mouse">
+              <MappingFragment StoreEntitySet="Mouse">
+                <ScalarProperty Name="id_mouse" ColumnName="id_mouse" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Min_DPI" ColumnName="Min_DPI" />
+                <ScalarProperty Name="Max_DPI" ColumnName="Max_DPI" />
+                <ScalarProperty Name="id_Key_illumination_color" ColumnName="id_Key_illumination_color" />
+                <ScalarProperty Name="id_proizvoditel" ColumnName="id_proizvoditel" />
+                <ScalarProperty Name="id_type_M" ColumnName="id_type_M" />
+                <ScalarProperty Name="id_garantii" ColumnName="id_garantii" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mouse_type">
+            <EntityTypeMapping TypeName="katalogModel.Mouse_type">
+              <MappingFragment StoreEntitySet="Mouse_type">
+                <ScalarProperty Name="id_type_M" ColumnName="id_type_M" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="naushniki">
+            <EntityTypeMapping TypeName="katalogModel.naushniki">
+              <MappingFragment StoreEntitySet="naushniki">
+                <ScalarProperty Name="id_naushnikov" ColumnName="id_naushnikov" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Signal_transmission_method" ColumnName="Signal_transmission_method" />
+                <ScalarProperty Name="id_color" ColumnName="id_color" />
+                <ScalarProperty Name="id_micro_ushi" ColumnName="id_micro_ushi" />
+                <ScalarProperty Name="id_proizvoditel" ColumnName="id_proizvoditel" />
+                <ScalarProperty Name="id_type_N" ColumnName="id_type_N" />
+                <ScalarProperty Name="id_garantii" ColumnName="id_garantii" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Naushniki_type">
+            <EntityTypeMapping TypeName="katalogModel.Naushniki_type">
+              <MappingFragment StoreEntitySet="Naushniki_type">
+                <ScalarProperty Name="id_type_N" ColumnName="id_type_N" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="number_user">
+            <EntityTypeMapping TypeName="katalogModel.number_user">
+              <MappingFragment StoreEntitySet="number_user">
+                <ScalarProperty Name="id_number" ColumnName="id_number" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proizvoditel">
+            <EntityTypeMapping TypeName="katalogModel.proizvoditel">
+              <MappingFragment StoreEntitySet="proizvoditel">
+                <ScalarProperty Name="id_proizvoditel" ColumnName="id_proizvoditel" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roll">
+            <EntityTypeMapping TypeName="katalogModel.roll">
+              <MappingFragment StoreEntitySet="roll">
+                <ScalarProperty Name="id_roll" ColumnName="id_roll" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="katalogModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="katalogModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="adress" ColumnName="adress" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="id_roll" ColumnName="id_roll" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
