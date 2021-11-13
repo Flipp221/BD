@@ -37,17 +37,20 @@ namespace BD
 
         private void LvlOne(object sender, RoutedEventArgs e)
         {
-            if (int.Parse(Password.Text) == 22341033)
+            if (Password.Text == "201102")
             {
-                Window1 wd = new Window1();
-                wd.Show();
-                this.Close();
+                if (Login.Text == "12345")
+                {
+                    Window1 wd = new Window1();
+                    wd.Show();
+                    this.Close();
+                }
             }
             else
             {
                 MessageBox.Show("Неверный логин или пароль!");
             }
-        }
+        } 
 
     }
 }
