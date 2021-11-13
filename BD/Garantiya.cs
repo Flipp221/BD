@@ -21,6 +21,7 @@ namespace BD
             this.Kreslo = new HashSet<Kreslo>();
             this.Microfon = new HashSet<Microfon>();
             this.Mouse = new HashSet<Mouse>();
+            this.naushniki = new HashSet<naushniki>();
         }
     
         public int id_garantii { get; set; }
@@ -34,5 +35,7 @@ namespace BD
         public virtual ICollection<Microfon> Microfon { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Mouse> Mouse { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<naushniki> naushniki { get; set; }
     }
 }

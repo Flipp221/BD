@@ -22,6 +22,14 @@ namespace BD
         public Window4()
         {
             InitializeComponent();
+            DGridKatalog.ItemsSource = katalogEntities.GetContext().naushniki.ToList();
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 mw = new Window1();
+            mw.Show();
+            this.Close();
         }
     }
 }

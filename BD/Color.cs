@@ -19,6 +19,7 @@ namespace BD
         {
             this.keyboard = new HashSet<keyboard>();
             this.Kreslo = new HashSet<Kreslo>();
+            this.naushniki = new HashSet<naushniki>();
         }
     
         public int id_color { get; set; }
@@ -28,5 +29,7 @@ namespace BD
         public virtual ICollection<keyboard> keyboard { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Kreslo> Kreslo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<naushniki> naushniki { get; set; }
     }
 }

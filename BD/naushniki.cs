@@ -22,9 +22,13 @@ namespace BD
         public Nullable<int> id_proizvoditel { get; set; }
         public Nullable<int> id_type_N { get; set; }
         public Nullable<int> id_garantii { get; set; }
-    
+
+        public virtual Color Color { get; set; }
+        public virtual Garantiya Garantiya { get; set; }
         public virtual Micro_ushi Micro_ushi { get; set; }
         public virtual Naushniki_type Naushniki_type { get; set; }
         public virtual proizvoditel proizvoditel { get; set; }
+
+
     }
 }
