@@ -37,8 +37,9 @@ namespace BD
 
         private void LvlOne(object sender, RoutedEventArgs e)
         {
-            if (Password.Text == "201102")
+            if (Password.Password == "201102")
             {
+
                 if (Login.Text == "12345")
                 {
                     Window1 wd = new Window1();

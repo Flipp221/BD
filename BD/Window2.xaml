@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BD"
         mc:Ignorable="d"
-        Title="Window2" Height="450" Width="800">
+        Title="Window2" Height="450" Width="750">
     <Grid>
-        
+        <Image Source="ef56fb24364f66fef59ccf94225f4b4f.jpg" Margin="-46,0,-48,0"/>
     </Grid>
 </Window>
