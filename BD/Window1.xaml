@@ -1,0 +1,23 @@
+﻿<Window x:Class="BD.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BD"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="750">
+    <Grid>
+        <Image Source="55435.jpg" Margin="-46,0,-48,0"/>
+        <Image Source="1-removebg-preview.png" Margin="10,0,555,294"/>
+        <Image Source="2-removebg-preview.png" Margin="211,0,362,294" RenderTransformOrigin="0.633,0.556"/>
+        <Image Source="3-removebg-preview.png" Margin="460,0,121,294"/>
+        <Image Source="6-removebg-preview.png" Margin="19,147,555,140"/>
+        <Image Source="7-removebg-preview.png" Margin="452,147,121,140" RenderTransformOrigin="0.684,0.655"/>
+        <TextBlock HorizontalAlignment="Left" Margin="459,279,0,0" TextWrapping="Wrap" Text="Микрофоны" VerticalAlignment="Top" Height="68" Width="162" FontSize="24" FontFamily="Comic Sans MS" RenderTransformOrigin="0.154,0.588" Foreground="#FF00FF23"/>
+        <TextBlock HorizontalAlignment="Left" Margin="19,279,0,0" TextWrapping="Wrap" Text="Игровые кресла" VerticalAlignment="Top" Height="68" Width="209" FontSize="24" FontFamily="Comic Sans MS" RenderTransformOrigin="0.154,0.588" Foreground="#FF00FF23"/>
+        <TextBlock HorizontalAlignment="Left" Margin="490,101,0,0" TextWrapping="Wrap" Text="Наушники" VerticalAlignment="Top" Height="68" Width="162" FontSize="24" FontFamily="Comic Sans MS" RenderTransformOrigin="0.154,0.588" Foreground="#FF00FF23"/>
+        <TextBlock HorizontalAlignment="Left" Margin="256,101,0,0" TextWrapping="Wrap" Text="Мышки" VerticalAlignment="Top" Height="33" Width="95" FontSize="24" FontFamily="Comic Sans MS" RenderTransformOrigin="0.154,0.588" Foreground="#FF00FF23"/>
+        <TextBlock HorizontalAlignment="Left" Margin="33,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="154" FontSize="24" FontFamily="Comic Sans MS" RenderTransformOrigin="0.154,0.588" Foreground="#FF00FF23"><Run Background="Black" Text="Клавиатуры"/></TextBlock>
+
+    </Grid>
+</Window>
