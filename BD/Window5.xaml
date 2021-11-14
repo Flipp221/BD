@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="Window5" Height="450" Width="800">
     <Grid>
-        
+        <DataGrid x:Name="DGridKatalog" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название кресла" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Цвет кресла" Binding="{Binding Color.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Производитель" Binding="{Binding proizvoditel.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Тип кресла" Binding="{Binding kreslo_type.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Гарантия" Binding="{Binding Garantiya.Name}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Назад" HorizontalAlignment="Right" Name="Btnback" Click="BtnBack_Click" Height="45" VerticalAlignment="Bottom" RenderTransformOrigin="-0.553,-0.345" Margin="0,0,10,10" Width="95"/>
     </Grid>
 </Window>
