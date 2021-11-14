@@ -62,5 +62,11 @@ namespace BD
             wd.Show();
             this.Close();
         }
+        private void User_game(object sender, MouseEventArgs e)
+        {
+            Window7 wd = new Window7();
+            wd.Show();
+            this.Close();
+        }
     }
 }

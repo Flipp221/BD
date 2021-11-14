@@ -9,6 +9,7 @@
     <Grid>
         <Image Source="55435.jpg" Margin="-46,0,-48,0"/>
         <Image Source="1-removebg-preview.png" Margin="10,0,555,294" MouseLeftButtonDown="Keyboard_game" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+        <Image Source="1111.png" Margin="233,154,332,140" MouseLeftButtonDown="User_game" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
         <Image Source="2-removebg-preview.png" Margin="211,0,362,294" RenderTransformOrigin="0.633,0.556" MouseLeftButtonDown="mouse_game" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
         <Image Source="3-removebg-preview.png" Margin="460,0,121,294" MouseLeftButtonDown="ushi_game" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
         <Image Source="6-removebg-preview.png" Margin="19,147,555,140" MouseLeftButtonDown="Kreslo_game" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
@@ -18,6 +19,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="490,101,0,0" TextWrapping="Wrap" Text="Наушники" VerticalAlignment="Top" Height="68" Width="162" FontSize="24" FontFamily="Comic Sans MS" RenderTransformOrigin="0.154,0.588" Foreground="#FF00FF23"/>
         <TextBlock HorizontalAlignment="Left" Margin="256,101,0,0" TextWrapping="Wrap" Text="Мышки" VerticalAlignment="Top" Height="33" Width="95" FontSize="24" FontFamily="Comic Sans MS" RenderTransformOrigin="0.154,0.588" Foreground="#FF00FF23"/>
         <TextBlock HorizontalAlignment="Left" Margin="33,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="154" FontSize="24" FontFamily="Comic Sans MS" RenderTransformOrigin="0.154,0.588" Foreground="#FF00FF23"><Run Background="Black" Text="Клавиатуры"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="233,279,0,0" TextWrapping="Wrap" Text="Пользователи" VerticalAlignment="Top" Height="68" Width="177" FontSize="24" FontFamily="Comic Sans MS" RenderTransformOrigin="0.154,0.588" Foreground="#FF00FF23"/>
 
     </Grid>
 </Window>
