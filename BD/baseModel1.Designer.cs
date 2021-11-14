@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\Miller\source\repos\BD\BD\Properties\BD\baseModel1.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\Miller\source\repos\BD\BD\Properties\BD\Properties\BD\bin\BD\baseModel1.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

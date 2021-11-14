@@ -15,7 +15,8 @@ namespace BD
 
     public partial class Mouse
     {
-        public static Cursor OverrideCursor { get; internal set; }
+        internal static Cursor OverrideCursor;
+
         public int id_mouse { get; set; }
         public string Name { get; set; }
         public string Min_DPI { get; set; }

@@ -45,6 +45,8 @@
         <AssociationConnector Association="katalogModel.FK_naushniki_proizvoditel" ManuallyRouted="false" />
         <AssociationConnector Association="katalogModel.FK_number_user_User" ManuallyRouted="false" />
         <AssociationConnector Association="katalogModel.FK_User_roll" ManuallyRouted="false" />
+        <AssociationConnector Association="katalogModel.FK_naushniki_Color" />
+        <AssociationConnector Association="katalogModel.FK_naushniki_Garantiya" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
