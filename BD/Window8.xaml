@@ -16,7 +16,7 @@
         <TextBlock Text="Никнейм пользователя" FontSize="18" Margin="10,10,583,383"/>
         <TextBlock FontSize="18" Margin="34,200,612,193"><Run Text="Введите "/><Run Text="логин"/></TextBlock>
         <TextBox x:Name="NicknameTB" Margin="214,10,384,383"/>
-        <Button x:Name="BtnReg" Content="Зарегистрироваться" Margin="551,340,30,25" FontSize="22" Background="#FFFD6007" Click="BtnReg_Click"/>
+        <Button x:Name="BtnReg" Content="Зарегистрироваться" Margin="213,340,369,25" FontSize="22" Background="#FFFD6007" Click="BtnReg_Click"/>
         <TextBlock Text="Телефон" FontSize="18" Margin="64,56,652,337"/>
         <TextBox x:Name="PhoneTB" Margin="213,56,385,337"/>
         <TextBlock Text="Адресс" FontSize="18" Margin="64,101,668,292"/>
@@ -26,6 +26,10 @@
         <TextBox x:Name="LoginTB" Margin="214,200,384,193"/>
         <TextBlock FontSize="18" Margin="34,248,612,145"><Run Text="Введите "/><Run Text="пароль"/></TextBlock>
         <TextBox x:Name="PassTB" Margin="214,248,384,145"/>
+        <Button Content="Назад" HorizontalAlignment="Right" Name="Btnback" Click="BtnBack_Click" Height="54" VerticalAlignment="Bottom" RenderTransformOrigin="-0.553,-0.345" Margin="0,0,22,341" Width="89"/>
+        <ComboBox x:Name="RolCB" HorizontalAlignment="Left" Margin="214,299,0,0" VerticalAlignment="Top" Width="193"/>
+        <TextBlock FontSize="18" Margin="64,295,622,98" Text="Ваша роль"/>
     </Grid>
+
 
 </Window>

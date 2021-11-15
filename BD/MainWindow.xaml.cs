@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BD; 
 
 namespace BD
 {
@@ -23,10 +24,11 @@ namespace BD
     {
         public static hhEntities db = new hhEntities();
 
-        public static User user;
+        public static number_user vhodUser;
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void Login_TextChanged(object sender, TextChangedEventArgs e)
@@ -41,19 +43,25 @@ namespace BD
 
         private void LvlOne(object sender, RoutedEventArgs e)
         {
-            if (Password.Password == "201102")
+            foreach(var number_User in MainWindow.db.number_user)
             {
-
-                if (Login.Text == "12345")
+                if(number_User.Login == Login.Text.Trim())
                 {
-                    Window1 wd = new Window1();
-                    wd.Show();
-                    this.Close();
+                    if(number_User.Password == Password.Password.Trim() && number_User.id_user != 7)
+                        {
+                            MessageBox.Show($"Привет Пользователь {number_User.Login}");
+                            MainWindow.vhodUser = number_User;
+                        }
+                    if(number_User.Password == Password.Password.Trim() && number_User.id_user == 7)
+                        {
+                            MessageBox.Show($"Привет админ {number_User.Login}");
+
+                        }
+                        Window1 wd = new Window1();
+                        wd.Show();
+                        this.Close();
+
                 }
-            }
-            else
-            {
-                MessageBox.Show("Неверный логин или пароль!");
             }
         }
 
@@ -63,5 +71,6 @@ namespace BD
             wd.Show();
             this.Close();
         }
+
     }
 }
