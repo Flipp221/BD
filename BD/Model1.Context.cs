@@ -13,19 +13,20 @@ namespace BD
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class katalogEntities : DbContext
+    public partial class hhEntities : DbContext
     {
-        private static katalogEntities _context;
-        public katalogEntities()
-            : base("name=katalogEntities")
+        private static hhEntities _context;
+        public hhEntities()
+            : base("name=hhEntities")
         {
         }
-        public static katalogEntities GetContext()
+        public static hhEntities GetContext()
         {
             if (_context == null)
-                _context = new katalogEntities();
+                _context = new hhEntities();
             return _context;
         }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -48,7 +49,6 @@ namespace BD
         public virtual DbSet<number_user> number_user { get; set; }
         public virtual DbSet<proizvoditel> proizvoditel { get; set; }
         public virtual DbSet<roll> roll { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
     }
 }

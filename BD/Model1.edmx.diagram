@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f5ca371764b145e28f589f6a741b1c66" Name="Diagram1">
+        <EntityTypeShape EntityType="hhModel.Color" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.Garantiya" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.Key_illumination_color" Width="1.5" PointX="3.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.keyboard" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.keyboard_type" Width="1.5" PointX="0.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.Kreslo" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.kreslo_type" Width="1.5" PointX="3.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.Micro_ushi" Width="1.5" PointX="3.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.Microfon" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.microfon_type" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.Mouse" Width="1.5" PointX="6" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.Mouse_type" Width="1.5" PointX="3.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.naushniki" Width="1.5" PointX="6" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.Naushniki_type" Width="1.5" PointX="3.75" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.number_user" Width="1.5" PointX="10.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.proizvoditel" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.roll" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="hhModel.User" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="hhModel.FK_keyboard_Color" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_Kreslo_Color" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_naushniki_Color" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_keyboard_Garantiya" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_Kreslo_Garantiya" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_Microfon_Garantiya1" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_Mouse_Garantiya" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_naushniki_Garantiya" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_keyboard_Key_illumination_color" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_Mouse_Key_illumination_color" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_keyboard_keyboard_type" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_keyboard_proizvoditel" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_Kreslo_kreslo_type" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_Kreslo_proizvoditel" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_naushniki_Micro_ushi" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_Microfon_microfon_type" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_Microfon_proizvoditel" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_Mouse_Mouse_type" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_Mouse_proizvoditel" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_naushniki_Naushniki_type" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_naushniki_proizvoditel" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_number_user_User" ManuallyRouted="false" />
+        <AssociationConnector Association="hhModel.FK_User_roll" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

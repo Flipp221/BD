@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,6 +21,9 @@ namespace BD
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static hhEntities db = new hhEntities();
+
+        public static User user;
         public MainWindow()
         {
             InitializeComponent();
@@ -51,7 +55,13 @@ namespace BD
             {
                 MessageBox.Show("Неверный логин или пароль!");
             }
-        } 
+        }
 
+        private void registr(object sender, RoutedEventArgs e)
+        {
+            Window8 wd = new Window8();
+            wd.Show();
+            this.Close();
+        }
     }
 }

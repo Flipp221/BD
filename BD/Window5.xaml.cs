@@ -22,7 +22,7 @@ namespace BD
         public Window5()
         {
             InitializeComponent();
-            DGridKatalog.ItemsSource = katalogEntities.GetContext().Kreslo.ToList();
+            DGridKatalog.ItemsSource = hhEntities.GetContext().Kreslo.ToList();
 
         }
 

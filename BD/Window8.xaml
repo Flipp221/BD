@@ -1,0 +1,31 @@
+﻿<Window x:Class="BD.Window8"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BD"
+        mc:Ignorable="d"
+        Title="Window8" Height="450" Width="800">
+    <Grid Height="419" VerticalAlignment="Bottom">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Никнейм пользователя" FontSize="18" Margin="10,10,583,383"/>
+        <TextBlock FontSize="18" Margin="34,200,612,193"><Run Text="Введите "/><Run Text="логин"/></TextBlock>
+        <TextBox x:Name="NicknameTB" Margin="214,10,384,383"/>
+        <Button x:Name="BtnReg" Content="Зарегистрироваться" Margin="551,340,30,25" FontSize="22" Background="#FFFD6007" Click="BtnReg_Click"/>
+        <TextBlock Text="Телефон" FontSize="18" Margin="64,56,652,337"/>
+        <TextBox x:Name="PhoneTB" Margin="213,56,385,337"/>
+        <TextBlock Text="Адресс" FontSize="18" Margin="64,101,668,292"/>
+        <TextBox x:Name="AdressTB" Margin="213,101,385,292"/>
+        <TextBlock Text="Возраст" FontSize="18" Margin="64,151,652,242"/>
+        <TextBox x:Name="AgeTB" Margin="213,151,385,242"/>
+        <TextBox x:Name="LoginTB" Margin="214,200,384,193"/>
+        <TextBlock FontSize="18" Margin="34,248,612,145"><Run Text="Введите "/><Run Text="пароль"/></TextBlock>
+        <TextBox x:Name="PassTB" Margin="214,248,384,145"/>
+    </Grid>
+
+</Window>
