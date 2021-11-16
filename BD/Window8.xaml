@@ -27,8 +27,8 @@
         <TextBlock FontSize="18" Margin="34,248,612,145"><Run Text="Введите "/><Run Text="пароль"/></TextBlock>
         <TextBox x:Name="PassTB" Margin="214,248,384,145"/>
         <Button Content="Назад" HorizontalAlignment="Right" Name="Btnback" Click="BtnBack_Click" Height="54" VerticalAlignment="Bottom" RenderTransformOrigin="-0.553,-0.345" Margin="0,0,22,341" Width="89"/>
-        <ComboBox x:Name="RolCB" HorizontalAlignment="Left" Margin="214,299,0,0" VerticalAlignment="Top" Width="193"/>
         <TextBlock FontSize="18" Margin="64,295,622,98" Text="Ваша роль"/>
+        <TextBox x:Name="RollTB" Margin="213,295,385,98" Text="Пользователь" IsEnabled="False"/>
     </Grid>
 
 

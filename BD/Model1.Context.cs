@@ -18,6 +18,7 @@ namespace BD
     public partial class hhEntities : DbContext
     {
         private static hhEntities _context;
+
         public hhEntities()
             : base("name=hhEntities")
         {

@@ -25,8 +25,6 @@ namespace BD
         public Window8()
         {
             InitializeComponent();
-            RolCB.ItemsSource = MainWindow.db.roll.ToList();
-            RolCB.DisplayMemberPath = "name";
         }
 
         private void BtnReg_Click(object sender, RoutedEventArgs e)
@@ -37,14 +35,14 @@ namespace BD
             }
             else
             {
+                int b = Convert.ToInt32(PhoneTB.Text);
                 int a = Convert.ToInt32(AgeTB.Text);
-                var selectedroll = RolCB.SelectedItem as roll;
                 User user = new User();
                 user.name = NicknameTB.Text;
-                user.phone = PhoneTB.Text;
+                user.phone = b;
                 user.adress = AdressTB.Text;
                 user.age = a;
-                user.id_roll = selectedroll.id_roll;
+                user.id_roll = 3;
 
 
                 number_user number_User = new number_user();
