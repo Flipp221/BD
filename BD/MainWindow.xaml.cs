@@ -23,7 +23,7 @@ namespace BD
     public partial class MainWindow : Window
     {
         public static hhEntities db = new hhEntities();
-
+        
         public static number_user vhodUser;
         public MainWindow()
         {
@@ -49,12 +49,12 @@ namespace BD
                 {
                     if(number_User.Password == Password.Password.Trim() && number_User.id_user != 7)
                         {
-                            MessageBox.Show($"Привет Пользователь {number_User.Login}");
+                            MessageBox.Show($"Привет Пользователь  ваш персональный Id - {number_User.id_user}");
                             MainWindow.vhodUser = number_User;
                         }
                     if(number_User.Password == Password.Password.Trim() && number_User.id_user == 7)
                         {
-                            MessageBox.Show($"Привет админ {number_User.Login}");
+                            MessageBox.Show($"Привет админ  ваш персональный Id -  {number_User.id_user}");
 
                         }
                         Window1 wd = new Window1();
