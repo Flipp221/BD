@@ -10,7 +10,7 @@
             <PropertyRef Name="id_color" />
           </Key>
           <Property Name="id_color" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Garantiya">
           <Key>
@@ -30,7 +30,7 @@
           <Key>
             <PropertyRef Name="id_keyboard" />
           </Key>
-          <Property Name="id_keyboard" Type="int" Nullable="false" />
+          <Property Name="id_keyboard" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="id_Key_illumination_color" Type="int" />
           <Property Name="id_color" Type="int" />
@@ -602,7 +602,7 @@
             <PropertyRef Name="id_color" />
           </Key>
           <Property Name="id_color" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="keyboard" Relationship="Self.FK_keyboard_Color" FromRole="Color" ToRole="keyboard" />
           <NavigationProperty Name="Kreslo" Relationship="Self.FK_Kreslo_Color" FromRole="Color" ToRole="Kreslo" />
           <NavigationProperty Name="naushniki" Relationship="Self.FK_naushniki_Color" FromRole="Color" ToRole="naushniki" />

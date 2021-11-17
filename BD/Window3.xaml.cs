@@ -31,13 +31,11 @@ namespace BD
             {
                 BtnClear.Visibility = Visibility.Hidden;
                 BtnDob.Visibility = Visibility.Hidden;
-                BtnRed.Visibility = Visibility.Hidden;
             }
             else
             {
                 BtnClear.Visibility = Visibility.Visible;
                 BtnDob.Visibility = Visibility.Visible;
-                BtnRed.Visibility = Visibility.Visible;
             }
         }
 

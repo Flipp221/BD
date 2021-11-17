@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BD"
         mc:Ignorable="d"
-        Title="Window2" Height="450" Width="750">
+        Title="Window2" Height="450" Width="750" IsVisibleChanged="Page_IsVisibleChanged">
     <Grid>
         <Image Source="ef56fb24364f66fef59ccf94225f4b4f.jpg" Margin="-46,0,-48,0"/>
         <DataGrid x:Name="DGridKatalog" AutoGenerateColumns="False" IsReadOnly="True">
@@ -19,7 +19,6 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Назад" HorizontalAlignment="Right" Name="Btnback" Click="BtnBack_Click" Height="45" VerticalAlignment="Bottom" RenderTransformOrigin="-0.553,-0.345" Margin="0,0,10,10" Width="95"/>
-        <Button Content="Редактировать" HorizontalAlignment="Left" Name="BtnRed" Click="BtnRed_Click" Height="45" Margin="10,364,0,0" VerticalAlignment="Top" Width="116"/>
         <Button Content="Добавить" HorizontalAlignment="Left" Name="BtnDob" Click="BtnDob_Click" Height="45" Margin="170,364,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Удалить" HorizontalAlignment="Left" Name="BtnClear" Click="BtnClear_Click" Height="45" Margin="532,364,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.14,0.611"/>
 

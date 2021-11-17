@@ -23,8 +23,9 @@ namespace BD
         public Window2()
         {
             InitializeComponent();
-            DGridKatalog.ItemsSource = hhEntities.GetContext().keyboard.ToList();
+            //DGridKatalog.ItemsSource = hhEntities.GetContext().keyboard.ToList();
             Visible();
+
             
         }
 
@@ -34,13 +35,11 @@ namespace BD
             {
                 BtnClear.Visibility = Visibility.Hidden;
                 BtnDob.Visibility = Visibility.Hidden;
-                BtnRed.Visibility = Visibility.Hidden;
             }
             else
             {
                 BtnClear.Visibility = Visibility.Visible;
                 BtnDob.Visibility = Visibility.Visible;
-                BtnRed.Visibility = Visibility.Visible;
             }
         }
 
@@ -58,12 +57,39 @@ namespace BD
 
         private void BtnDob_Click(object sender, RoutedEventArgs e)
         {
-
+            Window9 mw = new Window9();
+            mw.Show();
+            this.Close();
         }
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
+            var keyboardsForRemoving = DGridKatalog.SelectedItems.Cast<keyboard>().ToList();
 
+            if(MessageBox.Show($"Вы точно хотите удалить сдедующие{keyboardsForRemoving.Count()} элементов?" , "Внимение" , 
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    hhEntities.GetContext().keyboard.RemoveRange(keyboardsForRemoving);
+                    hhEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены");
+
+                    DGridKatalog.ItemsSource = hhEntities.GetContext().keyboard.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if(Visibility == Visibility.Visible)
+            {
+                hhEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                DGridKatalog.ItemsSource = hhEntities.GetContext().keyboard.ToList();
+            }
         }
     }
 }
