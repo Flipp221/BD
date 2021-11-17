@@ -19,10 +19,29 @@ namespace BD
     /// </summary>
     public partial class Window2 : Window
     {
+
         public Window2()
         {
             InitializeComponent();
             DGridKatalog.ItemsSource = hhEntities.GetContext().keyboard.ToList();
+            Visible();
+            
+        }
+
+        public void Visible()
+        {
+            if (MainWindow.vhodUser.id_user != 7)
+            {
+                BtnClear.Visibility = Visibility.Hidden;
+                BtnDob.Visibility = Visibility.Hidden;
+                BtnRed.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                BtnClear.Visibility = Visibility.Visible;
+                BtnDob.Visibility = Visibility.Visible;
+                BtnRed.Visibility = Visibility.Visible;
+            }
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -31,6 +50,20 @@ namespace BD
             mw.Show();
             this.Close();
         }
-        
+
+        private void BtnRed_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnDob_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
