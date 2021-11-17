@@ -25,12 +25,12 @@
         <TextBlock Text="Тип подсветки клавиш" FontSize="18" Margin="31,20,10,0" Grid.Row="3"/>
         <TextBlock Text="Тип клавиатуры" FontSize="18" Margin="31,20,29,0" Grid.Row="4"/>
         <TextBlock Text="Гарантия" FontSize="18" Margin="31,19,29,0" Grid.Row="5"/>
-        <TextBox x:Name="NameKlavTB" Margin="24,20,209,10" Grid.Column="1" TextChanged="NameKlavTB_TextChanged"/>
-        <ComboBox x:Name="ColorKlavCB" Text="{Binding Color.Name}" Grid.Column="1" HorizontalAlignment="Left" Margin="24,20,0,0" Grid.Row="1" VerticalAlignment="Top" DisplayMemberPath="Name" Width="317" Height="40" SelectionChanged="ColorKlavCB_SelectionChanged"/>
-        <ComboBox x:Name="ProizvodKlavCB" Text="{Binding proizvoditel.Name}" Grid.Column="1" HorizontalAlignment="Left" Margin="24,20,0,0" Grid.Row="2" VerticalAlignment="Top" DisplayMemberPath="Name" Width="317" Height="40"/>
-        <ComboBox x:Name="PodKlavCB" Text="{Binding Key_illumination_color.Name }" Grid.Column="1" HorizontalAlignment="Left" Margin="24,20,0,0" Grid.Row="3" VerticalAlignment="Top" DisplayMemberPath="Name" Width="317" Height="40"/>
-        <ComboBox x:Name="TypeKlavCB" Text="{Binding keyboard_type.Name}" Grid.Column="1" HorizontalAlignment="Left" Margin="24,20,0,0" Grid.Row="4" VerticalAlignment="Top" DisplayMemberPath="Name" Width="317" Height="40"/>
-        <ComboBox x:Name="GarantiyaKlavCB" Text="{Binding Garantiya.Name}" Grid.Column="1" HorizontalAlignment="Left" Margin="24,19,0,0" Grid.Row="5" VerticalAlignment="Top" DisplayMemberPath="Name" Width="317" Height="40"/>
+        <TextBox x:Name="NameKlavTB" Text="{Binding Name}" Margin="24,20,209,10" Grid.Column="1"/>
+        <ComboBox x:Name="ColorKlavCB" SelectedItem="{Binding Color}" Grid.Column="1" HorizontalAlignment="Left" Margin="24,20,0,0" Grid.Row="1" VerticalAlignment="Top" DisplayMemberPath="Name" Width="317" Height="40"/>
+        <ComboBox x:Name="ProizvodKlavCB" SelectedItem="{Binding proizvoditel}" Grid.Column="1" HorizontalAlignment="Left" Margin="24,20,0,0" Grid.Row="2" VerticalAlignment="Top" DisplayMemberPath="Name" Width="317" Height="40"/>
+        <ComboBox x:Name="PodKlavCB" SelectedItem="{Binding Key_illumination_color}" Grid.Column="1" HorizontalAlignment="Left" Margin="24,20,0,0" Grid.Row="3" VerticalAlignment="Top" DisplayMemberPath="Name" Width="317" Height="40"/>
+        <ComboBox x:Name="TypeKlavCB" SelectedItem="{Binding keyboard_type}" Grid.Column="1" HorizontalAlignment="Left" Margin="24,20,0,0" Grid.Row="4" VerticalAlignment="Top" DisplayMemberPath="Name" Width="317" Height="40"/>
+        <ComboBox x:Name="GarantiyaKlavCB" SelectedItem="{Binding Garantiya}" Grid.Column="1" HorizontalAlignment="Left" Margin="24,19,0,0" Grid.Row="5" VerticalAlignment="Top" DisplayMemberPath="Name" Width="317" Height="40"/>
         <Button x:Name="Btnsohr" Content="Сохранить" Margin="379,10,48,6" FontSize="22" Background="#FFFD6007" Click="BtnSohr_Click" Grid.Row="5" Grid.Column="1"/>
 
     </Grid>

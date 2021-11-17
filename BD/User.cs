@@ -22,10 +22,10 @@ namespace BD
     
         public int Id_user { get; set; }
         public string name { get; set; }
-        public Nullable<int> phone { get; set; }
         public string adress { get; set; }
         public Nullable<int> age { get; set; }
         public Nullable<int> id_roll { get; set; }
+        public string phone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<number_user> number_user { get; set; }

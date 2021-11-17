@@ -18,7 +18,6 @@ namespace BD
     public partial class hhEntities : DbContext
     {
         private static hhEntities _context;
-
         public hhEntities()
             : base("name=hhEntities")
         {
@@ -29,6 +28,7 @@ namespace BD
                 _context = new hhEntities();
             return _context;
         }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -24,12 +24,12 @@ namespace BD
         public Window9()
         {
             InitializeComponent();
+            DataContext = _currentKeyboard;
             ColorKlavCB.ItemsSource = hhEntities.GetContext().Color.ToList();
             ProizvodKlavCB.ItemsSource = hhEntities.GetContext().proizvoditel.ToList();
             PodKlavCB.ItemsSource = hhEntities.GetContext().Key_illumination_color.ToList();
             TypeKlavCB.ItemsSource = hhEntities.GetContext().keyboard_type.ToList();
             GarantiyaKlavCB.ItemsSource = hhEntities.GetContext().Garantiya.ToList();
-            DataContext = _currentKeyboard;
         }
 
         private void BtnSohr_Click(object sender, RoutedEventArgs e)
@@ -38,11 +38,19 @@ namespace BD
 
             if (string.IsNullOrWhiteSpace(NameKlavTB.Text))
                 errors.AppendLine("укажите название");
-            if (ColorKlavCB.SelectedItem == null)
+            if (_currentKeyboard.Color == null)
                 errors.AppendLine("Укажите цвет");
-            
+            if (_currentKeyboard.proizvoditel == null)
+                errors.AppendLine("Укажите производителя");
+            if (_currentKeyboard.Key_illumination_color == null)
+                errors.AppendLine("Укажите тип подсветки");
+            if (_currentKeyboard.keyboard_type == null)
+                errors.AppendLine("Укажите тип клавиатуры");
+            if (_currentKeyboard.Garantiya == null)
+                errors.AppendLine("Укажите гарантию");
 
-            if(errors.Length > 0)
+
+            if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
                 return;
@@ -64,17 +72,6 @@ namespace BD
             {
                 MessageBox.Show(ex.Message.ToString());
             }
-        }
-
-        private void NameKlavTB_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            _currentKeyboard.Name = NameKlavTB.Text;
-        }
-
-        private void ColorKlavCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBox combo = new ComboBox();
-            //_currentKeyboard.Color = MainWindow.db.Color.Find(ColorKlavCB.SelectedIndex);
         }
     }
 }

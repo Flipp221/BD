@@ -35,11 +35,10 @@ namespace BD
             }
             else
             {
-                int b = Convert.ToInt32(PhoneTB.Text);
                 int a = Convert.ToInt32(AgeTB.Text);
                 User user = new User();
                 user.name = NicknameTB.Text;
-                user.phone = b;
+                user.phone = PhoneTB.Text;
                 user.adress = AdressTB.Text;
                 user.age = a;
                 user.id_roll = 3;

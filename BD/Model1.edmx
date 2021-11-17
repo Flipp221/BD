@@ -4,13 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище hhModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище hhModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Color">
           <Key>
             <PropertyRef Name="id_color" />
           </Key>
           <Property Name="id_color" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Garantiya">
           <Key>
@@ -49,7 +49,7 @@
           <Key>
             <PropertyRef Name="id_kresla" />
           </Key>
-          <Property Name="id_kresla" Type="int" Nullable="false" />
+          <Property Name="id_kresla" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="id_color" Type="int" />
           <Property Name="id_proizvoditel" Type="int" />
@@ -74,7 +74,7 @@
           <Key>
             <PropertyRef Name="id_microfona" />
           </Key>
-          <Property Name="id_microfona" Type="int" Nullable="false" />
+          <Property Name="id_microfona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="Max_frequency" Type="varchar" MaxLength="50" />
           <Property Name="Min_frequency" Type="varchar" MaxLength="50" />
@@ -93,7 +93,7 @@
           <Key>
             <PropertyRef Name="id_mouse" />
           </Key>
-          <Property Name="id_mouse" Type="int" Nullable="false" />
+          <Property Name="id_mouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="Min_DPI" Type="varchar" MaxLength="50" />
           <Property Name="Max_DPI" Type="varchar" MaxLength="50" />
@@ -113,7 +113,7 @@
           <Key>
             <PropertyRef Name="id_naushnikov" />
           </Key>
-          <Property Name="id_naushnikov" Type="int" Nullable="false" />
+          <Property Name="id_naushnikov" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="Signal_transmission_method" Type="varchar" MaxLength="50" />
           <Property Name="id_color" Type="int" />
@@ -168,10 +168,10 @@
           </Key>
           <Property Name="Id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="50" />
-          <Property Name="phone" Type="int" />
           <Property Name="adress" Type="varchar" MaxLength="50" />
           <Property Name="age" Type="int" />
           <Property Name="id_roll" Type="int" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_keyboard_Color">
           <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
@@ -593,7 +593,8 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="hhModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -602,7 +603,7 @@
             <PropertyRef Name="id_color" />
           </Key>
           <Property Name="id_color" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="keyboard" Relationship="Self.FK_keyboard_Color" FromRole="Color" ToRole="keyboard" />
           <NavigationProperty Name="Kreslo" Relationship="Self.FK_Kreslo_Color" FromRole="Color" ToRole="Kreslo" />
           <NavigationProperty Name="naushniki" Relationship="Self.FK_naushniki_Color" FromRole="Color" ToRole="naushniki" />
@@ -632,7 +633,7 @@
           <Key>
             <PropertyRef Name="id_keyboard" />
           </Key>
-          <Property Name="id_keyboard" Type="Int32" Nullable="false" />
+          <Property Name="id_keyboard" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_Key_illumination_color" Type="Int32" />
           <Property Name="id_color" Type="Int32" />
@@ -657,7 +658,7 @@
           <Key>
             <PropertyRef Name="id_kresla" />
           </Key>
-          <Property Name="id_kresla" Type="Int32" Nullable="false" />
+          <Property Name="id_kresla" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_color" Type="Int32" />
           <Property Name="id_proizvoditel" Type="Int32" />
@@ -688,7 +689,7 @@
           <Key>
             <PropertyRef Name="id_microfona" />
           </Key>
-          <Property Name="id_microfona" Type="Int32" Nullable="false" />
+          <Property Name="id_microfona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Max_frequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Min_frequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -711,7 +712,7 @@
           <Key>
             <PropertyRef Name="id_mouse" />
           </Key>
-          <Property Name="id_mouse" Type="Int32" Nullable="false" />
+          <Property Name="id_mouse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Min_DPI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Max_DPI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -736,7 +737,7 @@
           <Key>
             <PropertyRef Name="id_naushnikov" />
           </Key>
-          <Property Name="id_naushnikov" Type="Int32" Nullable="false" />
+          <Property Name="id_naushnikov" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Signal_transmission_method" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_color" Type="Int32" />
@@ -762,7 +763,7 @@
           <Key>
             <PropertyRef Name="id_number" />
           </Key>
-          <Property Name="id_number" Type="Int32" Nullable="false" />
+          <Property Name="id_number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_user" Type="Int32" />
@@ -802,12 +803,12 @@
           <Key>
             <PropertyRef Name="Id_user" />
           </Key>
-          <Property Name="Id_user" Type="Int32" Nullable="false" />
+          <Property Name="Id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="phone" Type="Int32" />
           <Property Name="adress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="age" Type="Int32" />
           <Property Name="id_roll" Type="Int32" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="number_user" Relationship="Self.FK_number_user_User" FromRole="User" ToRole="number_user" />
           <NavigationProperty Name="roll" Relationship="Self.FK_User_roll" FromRole="User" ToRole="roll" />
         </EntityType>
@@ -1427,10 +1428,10 @@
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="Id_user" ColumnName="Id_user" />
                 <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="adress" ColumnName="adress" />
                 <ScalarProperty Name="age" ColumnName="age" />
                 <ScalarProperty Name="id_roll" ColumnName="id_roll" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
