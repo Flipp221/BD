@@ -22,7 +22,7 @@ namespace BD
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static hhEntities db = new hhEntities();
+        public static hhsEntities db = new hhsEntities();
         
         public static number_user vhodUser;
         public MainWindow()

@@ -22,7 +22,7 @@ namespace BD
         public Window3()
         {
             InitializeComponent();
-            DGridKatalog.ItemsSource = hhEntities.GetContext().Mouse.ToList();
+            //DGridKatalog.ItemsSource = hhsEntities.GetContext().Mouse.ToList();
             Visible();
         }
         public void Visible()
@@ -41,9 +41,9 @@ namespace BD
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-               Window1 mw = new Window1();
-                mw.Show();
-                this.Close();
+            Window1 mw = new Window1();
+            mw.Show();
+            this.Close();
         }
         private void BtnRed_Click(object sender, RoutedEventArgs e)
         {
@@ -52,13 +52,39 @@ namespace BD
 
         private void BtnDob_Click(object sender, RoutedEventArgs e)
         {
-
+            Window10 mw = new Window10();
+            mw.Show();
+            this.Close();
         }
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
+            var MousesForRemoving = DGridKatalog.SelectedItems.Cast<Mouse>().ToList();
 
+            if (MessageBox.Show($"Вы точно хотите удалить сдедующие{MousesForRemoving.Count()} элементов?", "Внимение",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    hhsEntities.GetContext().Mouse.RemoveRange(MousesForRemoving);
+                    hhsEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены");
+
+                    DGridKatalog.ItemsSource = hhsEntities.GetContext().Mouse.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+        private void Mouse_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                hhsEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(a => a.Reload());
+                DGridKatalog.ItemsSource = hhsEntities.GetContext().Mouse.ToList();
+            }
         }
     }
-
 }

@@ -1,0 +1,36 @@
+﻿<Window x:Class="BD.Window10"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BD"
+        mc:Ignorable="d"
+        Title="Window10" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Название мышки" FontSize="18" Margin="31,20,29,0"/>
+        <TextBlock Text="DPI" FontSize="18" Margin="31,20,29,0" Grid.Row="1"/>
+        <TextBlock Text="Тип подсветки" FontSize="18" Margin="31,20,29,0" Grid.Row="2"/>
+        <TextBlock Text="Производитель" FontSize="18" Margin="31,20,10,0" Grid.Row="3"/>
+        <TextBlock Text="Тип мышки" FontSize="18" Margin="31,20,29,0" Grid.Row="4"/>
+        <TextBlock Text="Гарантия" FontSize="18" Margin="31,19,29,0" Grid.Row="5"/>
+        <TextBox x:Name="NameMouseTB" Text="{Binding Name}" Margin="24,20,209,10" Grid.Column="1"/>
+        <ComboBox x:Name="PodMouseCB" SelectedItem="{Binding Key_illumination_color}" Grid.Column="1" HorizontalAlignment="Left" Margin="24,20,0,0" Grid.Row="2" VerticalAlignment="Top" DisplayMemberPath="Name" Width="317" Height="40"/>
+        <ComboBox x:Name="ProizMouseCB" SelectedItem="{Binding proizvoditel}" Grid.Column="1" HorizontalAlignment="Left" Margin="24,20,0,0" Grid.Row="3" VerticalAlignment="Top" DisplayMemberPath="Name" Width="317" Height="40"/>
+        <ComboBox x:Name="TypeMouseCB" SelectedItem="{Binding Mouse_type}" Grid.Column="1" HorizontalAlignment="Left" Margin="24,20,0,0" Grid.Row="4" VerticalAlignment="Top" DisplayMemberPath="Name" Width="317" Height="40"/>
+        <ComboBox x:Name="GarantiyaCB" SelectedItem="{Binding Garantiya}" Grid.Column="1" HorizontalAlignment="Left" Margin="24,19,0,0" Grid.Row="5" VerticalAlignment="Top" DisplayMemberPath="Name" Width="317" Height="40"/>
+        <Button x:Name="Btnsohr" Content="Сохранить" Margin="379,10,48,6" FontSize="22" Background="#FFFD6007" Click="BtnSohr_Click" Grid.Row="5" Grid.Column="1"/>
+        <TextBox x:Name="DPITB" Text="{Binding Max_DPI}" Margin="24,20,209,10" Grid.Column="1" Grid.Row="1"/>
+    </Grid>
+</Window>

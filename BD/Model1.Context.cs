@@ -15,20 +15,20 @@ namespace BD
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class hhEntities : DbContext
+    public partial class hhsEntities : DbContext
     {
-        private static hhEntities _context;
-        public hhEntities()
-            : base("name=hhEntities")
+        private static hhsEntities _context;
+
+        public hhsEntities()
+            : base("name=hhsEntities")
         {
         }
-        public static hhEntities GetContext()
+        public static hhsEntities GetContext()
         {
             if (_context == null)
-                _context = new hhEntities();
+                _context = new hhsEntities();
             return _context;
         }
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

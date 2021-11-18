@@ -25,11 +25,11 @@ namespace BD
         {
             InitializeComponent();
             DataContext = _currentKeyboard;
-            ColorKlavCB.ItemsSource = hhEntities.GetContext().Color.ToList();
-            ProizvodKlavCB.ItemsSource = hhEntities.GetContext().proizvoditel.ToList();
-            PodKlavCB.ItemsSource = hhEntities.GetContext().Key_illumination_color.ToList();
-            TypeKlavCB.ItemsSource = hhEntities.GetContext().keyboard_type.ToList();
-            GarantiyaKlavCB.ItemsSource = hhEntities.GetContext().Garantiya.ToList();
+            ColorKlavCB.ItemsSource = hhsEntities.GetContext().Color.ToList();
+            ProizvodKlavCB.ItemsSource = hhsEntities.GetContext().proizvoditel.ToList();
+            PodKlavCB.ItemsSource = hhsEntities.GetContext().Key_illumination_color.ToList();
+            TypeKlavCB.ItemsSource = hhsEntities.GetContext().keyboard_type.ToList();
+            GarantiyaKlavCB.ItemsSource = hhsEntities.GetContext().Garantiya.ToList();
         }
 
         private void BtnSohr_Click(object sender, RoutedEventArgs e)
@@ -57,11 +57,11 @@ namespace BD
             }
             if(_currentKeyboard.id_keyboard == 0)
             {
-                hhEntities.GetContext().keyboard.Add(_currentKeyboard);
+                hhsEntities.GetContext().keyboard.Add(_currentKeyboard);
             }
             try
             {
-                hhEntities.GetContext().SaveChanges();
+                hhsEntities.GetContext().SaveChanges();
                 MessageBox.Show("Информация сохранена");
                 Window2 wd = new Window2();
                 wd.Show();

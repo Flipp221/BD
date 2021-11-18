@@ -71,11 +71,11 @@ namespace BD
             {
                 try
                 {
-                    hhEntities.GetContext().keyboard.RemoveRange(keyboardsForRemoving);
-                    hhEntities.GetContext().SaveChanges();
+                    hhsEntities.GetContext().keyboard.RemoveRange(keyboardsForRemoving);
+                    hhsEntities.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены");
 
-                    DGridKatalog.ItemsSource = hhEntities.GetContext().keyboard.ToList();
+                    DGridKatalog.ItemsSource = hhsEntities.GetContext().keyboard.ToList();
                 }
                 catch (Exception ex)
                 {
@@ -87,8 +87,8 @@ namespace BD
         {
             if(Visibility == Visibility.Visible)
             {
-                hhEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                DGridKatalog.ItemsSource = hhEntities.GetContext().keyboard.ToList();
+                hhsEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                DGridKatalog.ItemsSource = hhsEntities.GetContext().keyboard.ToList();
             }
         }
     }
