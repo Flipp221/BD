@@ -22,7 +22,7 @@ namespace BD
         public Window4()
         {
             InitializeComponent();
-            DGridKatalog.ItemsSource = hhsEntities.GetContext().naushniki.ToList();
+            //DGridKatalog.ItemsSource = hhsEntities.GetContext().naushniki.ToList();
             Visible();
         }
         public void Visible()
@@ -52,12 +52,40 @@ namespace BD
 
         private void BtnDob_Click(object sender, RoutedEventArgs e)
         {
-
+            Window11 wd = new Window11();
+            wd.Show();
+            this.Close();
         }
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
+            var NauForRemoving = DGridKatalog.SelectedItems.Cast<naushniki>().ToList();
 
+            if (MessageBox.Show($"Вы точно хотите удалить сдедующие{NauForRemoving.Count()} элементов?", "Внимение",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    hhsEntities.GetContext().naushniki.RemoveRange(NauForRemoving);
+                    hhsEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены");
+
+                    DGridKatalog.ItemsSource = hhsEntities.GetContext().naushniki.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+
+        private void Nau_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                hhsEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                DGridKatalog.ItemsSource = hhsEntities.GetContext().naushniki.ToList();
+            }
         }
     }
 }
