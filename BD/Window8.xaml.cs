@@ -25,7 +25,7 @@ namespace BD
         public Window8()
         {
             InitializeComponent();
-        }
+        } 
 
         private void BtnReg_Click(object sender, RoutedEventArgs e)
         {
@@ -51,9 +51,15 @@ namespace BD
                 number_User.id_user = user.Id_user;
                 MainWindow.db.User.Add(user);
                 MainWindow.db.number_user.Add(number_User);
-                MainWindow.db.SaveChanges();
+                try
+                {
+                    MainWindow.db.SaveChanges();
+                }
+                catch
+                {
+                    MessageBox.Show("Такое имя пользователя или логин уже существует");
+                }
                 MessageBox.Show("Успешно!");
-                
             }
         }
 

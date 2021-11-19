@@ -23,7 +23,7 @@ namespace BD
         public int Id_user { get; set; }
         public string name { get; set; }
         public string adress { get; set; }
-        public Nullable<int> age { get; set; }
+        public int age { get; set; }
         public Nullable<int> id_roll { get; set; }
         public string phone { get; set; }
     

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище hhsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище hhsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Color">
           <Key>
             <PropertyRef Name="id_color" />
@@ -169,7 +169,7 @@
           <Property Name="Id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="50" />
           <Property Name="adress" Type="varchar" MaxLength="50" />
-          <Property Name="age" Type="int" />
+          <Property Name="age" Type="int" Nullable="false" />
           <Property Name="id_roll" Type="int" />
           <Property Name="phone" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -593,8 +593,7 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="hhsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -806,7 +805,7 @@
           <Property Name="Id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="adress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="age" Type="Int32" />
+          <Property Name="age" Type="Int32" Nullable="false" />
           <Property Name="id_roll" Type="Int32" />
           <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="number_user" Relationship="Self.FK_number_user_User" FromRole="User" ToRole="number_user" />
