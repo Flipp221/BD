@@ -22,7 +22,7 @@ namespace BD
         public Window7()
         {
             InitializeComponent();
-            DGridKatalog.ItemsSource = hhsEntities.GetContext().User.ToList();
+            //DGridKatalog.ItemsSource = hhsEntities.GetContext().User.ToList();
             Visible();
         }
         public void Visible()
@@ -45,17 +45,39 @@ namespace BD
             mw.Show();
             this.Close();
         }
-        private void BtnRed_Click(object sender, RoutedEventArgs e)
-        {
 
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
+            var usForRemoving = DGridKatalog.SelectedItems.Cast<User>().ToList();
+
+            if (MessageBox.Show($"Вы точно хотите забанить сдедующих{usForRemoving.Count()} пользователей?", "Внимение",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    hhsEntities.GetContext().User.RemoveRange(usForRemoving);
+                    hhsEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Пользователь забанен");
+
+                    DGridKatalog.ItemsSource = hhsEntities.GetContext().User.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+
+        private void User_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                hhsEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(pq => pq.Reload());
+                DGridKatalog.ItemsSource = hhsEntities.GetContext().User.ToList();
+            }
         }
 
         private void BtnDob_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
 
         }

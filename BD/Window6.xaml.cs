@@ -22,7 +22,7 @@ namespace BD
         public Window6()
         {
             InitializeComponent();
-            DGridKatalog.ItemsSource = hhsEntities.GetContext().Microfon.ToList();
+            //DGridKatalog.ItemsSource = hhsEntities.GetContext().Microfon.ToList();
             Visible();
         }
         public void Visible()
@@ -45,19 +45,43 @@ namespace BD
             mw.Show();
             this.Close();
         }
-        private void BtnRed_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void BtnDob_Click(object sender, RoutedEventArgs e)
         {
-
+            Window13 wd = new Window13();
+            wd.Show();
+            this.Close();
         }
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
+            var MicroForRemoving = DGridKatalog.SelectedItems.Cast<Microfon>().ToList();
 
+            if (MessageBox.Show($"Вы точно хотите удалить сдедующие{MicroForRemoving.Count()} элементов?", "Внимение",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    hhsEntities.GetContext().Microfon.RemoveRange(MicroForRemoving);
+                    hhsEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены");
+
+                    DGridKatalog.ItemsSource = hhsEntities.GetContext().Microfon.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+
+        private void Micro_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                hhsEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(ps => ps.Reload());
+                DGridKatalog.ItemsSource = hhsEntities.GetContext().Microfon.ToList();
+            }
         }
     }
 }

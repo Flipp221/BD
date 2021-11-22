@@ -22,7 +22,7 @@ namespace BD
         public Window5()
         {
             InitializeComponent();
-            DGridKatalog.ItemsSource = hhsEntities.GetContext().Kreslo.ToList();
+            //DGridKatalog.ItemsSource = hhsEntities.GetContext().Kreslo.ToList();
             Visible();
         }
         public void Visible()
@@ -45,19 +45,43 @@ namespace BD
             mw.Show();
             this.Close();
         }
-        private void BtnRed_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void BtnDob_Click(object sender, RoutedEventArgs e)
         {
-
+            Window12 wd = new Window12();
+            wd.Show();
+            this.Close();
         }
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
+            var KresloForRemoving = DGridKatalog.SelectedItems.Cast<Kreslo>().ToList();
 
+            if (MessageBox.Show($"Вы точно хотите удалить сдедующие{KresloForRemoving.Count()} элементов?", "Внимение",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    hhsEntities.GetContext().Kreslo.RemoveRange(KresloForRemoving);
+                    hhsEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены");
+
+                    DGridKatalog.ItemsSource = hhsEntities.GetContext().Kreslo.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+
+        private void kreslo_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                hhsEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(k => k.Reload());
+                DGridKatalog.ItemsSource = hhsEntities.GetContext().Kreslo.ToList();
+            }
         }
     }
 }
