@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BD; 
+using BD;
 
 namespace BD
 {
@@ -41,30 +41,38 @@ namespace BD
 
         }
 
-        private void LvlOne(object sender, RoutedEventArgs e)
+        public void LvlOne(object sender, RoutedEventArgs e)
         {
-            foreach(var number_User in MainWindow.db.number_user)
+            Auth(Login.Text, Password.Password);
+        }
+        public bool Auth(string Log, string password)
+        {
+            if (string.IsNullOrEmpty(Log) || string.IsNullOrEmpty(password))
             {
-                if(number_User.Login == Login.Text.Trim())
+                MessageBox.Show("Введите логин или пароль");
+                return false; 
+            }
+         
+            var AuthUser = db.number_user.FirstOrDefault(w => w.Login == Login.Text && w.Password == Password.Password);
+            if (AuthUser == null)
+            {
+                MessageBox.Show("Пользователь не найден");
+                return false;
+            }
+            else
+            {
+                switch (AuthUser.User.roll.id_roll)
                 {
-                    if(number_User.Password == Password.Password.Trim() && number_User.id_user != 7)
-                        {
-                            MessageBox.Show($"Привет Пользователь  ваш персональный Id - {number_User.id_user}");
-                            MainWindow.vhodUser = number_User;
-                        
-                    }
-                    if(number_User.Password == Password.Password.Trim() && number_User.id_user == 7)
-                        {
-                            MessageBox.Show($"Привет админ  ваш персональный Id -  {number_User.id_user}");
-                        MainWindow.vhodUser = number_User;
-
-                    }
-                        Window1 wd = new Window1();
-                        wd.Show();
-                        this.Close();
+                    case 1:
+                        MessageBox.Show("Админ");
+                        break;
+                    case 3:
+                        MessageBox.Show("Клиент");
+                        break;
 
                 }
             }
+            return true;
         }
 
         private void registr(object sender, RoutedEventArgs e)
