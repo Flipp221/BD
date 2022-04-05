@@ -8,10 +8,16 @@ namespace UnitTestProject1
     public class AuthTest
     {
         [TestMethod]
-        public void Auth_TestMethodFalse()
+        public void TestMethodFalse()
         {
             var authpage = new MainWindow();
-            Assert.IsTrue(authpage.Auth(" ", " "));
+            Assert.IsTrue(authpage.Auth("", ""));
+        }
+        [TestMethod]
+        public void TestMethodTrue()
+        {
+            var authpage = new MainWindow();
+            Assert.IsFalse(authpage.Auth("211907", "7777"));
         }
     }
 }
